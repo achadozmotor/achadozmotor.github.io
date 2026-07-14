@@ -108,7 +108,7 @@
       -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 0%, transparent 72%);
       mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 0%, transparent 72%);
     }
-    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 0.92fr 1.22fr; gap: 60px; align-items: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px 6px 6px; background: rgba(250, 176, 5, 0.1);
       border: 1px solid rgba(250, 176, 5, 0.2); border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: #fab005; margin-bottom: 24px;
@@ -141,7 +141,7 @@
     .hero-stat p { font-size: 0.8rem; color: #666680; margin-top: 2px; }
     .hero-visual {
       position: relative; display: flex; flex-direction: column; align-items: center;
-      justify-content: flex-start; gap: 18px; align-self: flex-start; padding-top: 8px;
+      justify-content: center; gap: 18px; align-self: center; padding-top: 0;
     }
     .hero-visual-heading {
       position: relative; text-align: center; max-width: 440px; padding: 0 12px;
@@ -161,7 +161,7 @@
       .hero-visual-heading { transition: opacity 0.3s ease; }
       .hero-visual-heading.is-dismissed { transform: none; }
     }
-    .hero-3d-container { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; }
+    .hero-3d-container { position: relative; width: 100%; max-width: 610px; aspect-ratio: 1; }
     .bola3d-cena { cursor: grab; user-select: none; -webkit-user-select: none; }
     .bola3d-cena.arrastando-globo,
     .bola3d-cena.arrastando-globo * { cursor: grabbing !important; user-select: none !important; -webkit-user-select: none !important; }
@@ -197,14 +197,14 @@
       transform: translate(-50%, -50%); transform-style: preserve-3d;
     }
     .bola3d-foto {
-      position: absolute; top: 50%; left: 50%; width: 130px; height: 96px; margin: -4px 0 0 -65px;
+      position: absolute; top: 50%; left: 50%; width: 150px; height: 111px; margin: -5px 0 0 -75px;
       transform-style: preserve-3d; backface-visibility: hidden; text-decoration: none; display: block;
     }
     .bola3d-foto-pendulo {
       width: 100%; height: 100%; transform-origin: 50% 0%; border-radius: 16px; overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
       background: #14141c; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, opacity 0.5s ease;
     }
     .bola3d-foto-pendulo img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .bola3d-foto .bola3d-tag {
@@ -304,6 +304,61 @@
     .how-card p { font-size: 0.9rem; line-height: 1.6; color: #8888a0; }
     .deals { padding: 120px 0; background: rgba(255, 255, 255, 0.015); position: relative; }
     .deals-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; gap: 24px; }
+
+    /* ===== BARRA DE FILTROS (busca + marca/modelo/preço/ano/km/combustível/câmbio) =====
+       Bloco independente da "Pesquisa Inteligente" (modal que monta mensagem de WhatsApp) —
+       essa barra filtra .deals-grid ao vivo, 100% client-side, sem chamada de rede. */
+    .filtros-bar {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px;
+      padding: 24px; margin-bottom: 32px;
+    }
+    .filtros-busca-linha { margin-bottom: 16px; }
+    .filtros-busca-input {
+      width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px; padding: 14px 16px; color: #e8e8ed; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+    }
+    .filtros-busca-input::placeholder { color: #666680; }
+    .filtros-busca-input:focus { outline: none; border-color: #fab005; }
+    .filtros-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; margin-bottom: 18px;
+    }
+    .filtro-campo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .filtro-campo-duplo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .filtro-campo > label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #8888a0;
+    }
+    .filtro-campo select, .filtro-campo input {
+      width: 100%; min-width: 0; box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px;
+      padding: 10px 12px; color: #e8e8ed; font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    }
+    .filtro-campo select { cursor: pointer; }
+    .filtro-campo select:focus, .filtro-campo input:focus { outline: none; border-color: #fab005; }
+    .filtros-rodape { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .filtro-resultado-texto { font-size: 0.85rem; color: #8888a0; }
+    .filtro-resultado-texto strong { color: #e8e8ed; }
+    .filtro-limpar-btn {
+      background: none; border: 1px solid rgba(255, 255, 255, 0.12); color: #8888a0; border-radius: 100px;
+      padding: 8px 18px; font-size: 0.8rem; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .filtro-limpar-btn:hover { border-color: #fab005; color: #fab005; }
+    .deals-empty {
+      grid-column: 1 / -1; text-align: center; padding: 56px 24px; color: #8888a0;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .deals-empty p { font-size: 1rem; }
+    @media (max-width: 640px) {
+      .filtros-bar { padding: 18px; border-radius: 16px; }
+      .filtros-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .filtros-rodape { flex-direction: column; align-items: stretch; }
+      .filtro-limpar-btn { width: 100%; }
+    }
+    @media (max-width: 380px) {
+      .filtros-grid { grid-template-columns: 1fr; }
+    }
+
     .deals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .deal-card {
       background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; overflow: hidden;
@@ -770,6 +825,53 @@
         </div>
         <button class="btn-secondary reveal reveal-delay-2" style="flex-shrink:0;">Ver todas →</button>
       </div>
+
+      <div class="filtros-bar reveal reveal-delay-2" id="filtrosBar">
+        <div class="filtros-busca-linha">
+          <input type="text" id="filtroTexto" class="filtros-busca-input" placeholder="Busque por marca ou modelo — ex: Corolla, Onix, HB20..." autocomplete="off" />
+        </div>
+        <div class="filtros-grid">
+          <div class="filtro-campo">
+            <label for="filtroMarca">Marca</label>
+            <select id="filtroMarca"><option value="">Todas as marcas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtroModelo">Modelo</label>
+            <select id="filtroModelo"><option value="">Todos os modelos</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label>Preço (R$)</label>
+            <div class="filtro-campo-duplo">
+              <input type="number" id="filtroPrecoMin" placeholder="Mín" min="0" inputmode="numeric" />
+              <input type="number" id="filtroPrecoMax" placeholder="Máx" min="0" inputmode="numeric" />
+            </div>
+          </div>
+          <div class="filtro-campo">
+            <label>Ano</label>
+            <div class="filtro-campo-duplo">
+              <select id="filtroAnoDe"><option value="">De</option></select>
+              <select id="filtroAnoAte"><option value="">Até</option></select>
+            </div>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtroKmMax">Km máximo</label>
+            <input type="number" id="filtroKmMax" placeholder="Ex: 100000" min="0" inputmode="numeric" />
+          </div>
+          <div class="filtro-campo">
+            <label for="filtroCombustivel">Combustível</label>
+            <select id="filtroCombustivel"><option value="">Qualquer</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtroCambio">Câmbio</label>
+            <select id="filtroCambio"><option value="">Qualquer</option></select>
+          </div>
+        </div>
+        <div class="filtros-rodape">
+          <div class="filtro-resultado-texto" id="filtroResultado" aria-live="polite"></div>
+          <button type="button" id="filtroLimparBtn" class="filtro-limpar-btn">Limpar filtros</button>
+        </div>
+      </div>
+
       <div class="deals-grid" id="dealsGrid"></div>
     </div>
   </section>
@@ -1013,13 +1115,17 @@
     });
 
     // ===== CARREGAR CARROS DO carros.json (dinâmico) =====
+    let TODOS_CARROS = [];
+
     async function carregarOfertas() {
       try {
         const res = await fetch('carros.json');
         const carros = await res.json();
+        TODOS_CARROS = carros;
         renderizarMarquee(carros);
-        renderizarDeals(carros);
         montarHeroVisual(carros);
+        inicializarFiltros(carros);
+        aplicarFiltros();
       } catch (err) {
         console.error('Não foi possível carregar carros.json:', err);
         document.getElementById('dealsGrid').innerHTML = `
@@ -1062,21 +1168,31 @@
       const orbita = document.getElementById('bolaOrbita');
       const cena = document.querySelector('.bola3d-cena');
       if (!orbita) return;
-      // Prioriza carros em destaque com foto; completa com os demais se faltar
-      const comFoto = carros.filter(c => c.fotos && c.fotos.length > 0);
-      const destaques = comFoto.filter(c => c.destaque);
-      const escolhidos = [...destaques, ...comFoto.filter(c => !c.destaque)].slice(0, 6);
+      const TOTAL_VAGAS = 6;
 
+      // O(s) carro(s) de dono particular ficam fixos no globo (nunca saem, nunca entram na
+      // rotação) — é o anúncio que mais precisa de visibilidade, já que não tem uma loja
+      // toda atrás dele. As demais vagas revezam entre os carros cadastrados (ver rotação mais abaixo).
+      const comFoto = carros.filter(c => c.fotos && c.fotos.length > 0);
+      const fixos = comFoto.filter(c => c.loja === 'Particular').slice(0, TOTAL_VAGAS);
+      const idsFixos = new Set(fixos.map(c => c.id));
+
+      const poolRotativo = comFoto.filter(c => !idsFixos.has(c.id));
+      const destaques = poolRotativo.filter(c => c.destaque);
+      const vagasRotativas = Math.max(0, TOTAL_VAGAS - fixos.length);
+      const rotativosIniciais = [...destaques, ...poolRotativo.filter(c => !c.destaque)].slice(0, vagasRotativas);
+
+      const escolhidos = [...fixos, ...rotativosIniciais];
       if (!escolhidos.length) return; // sem fotos ainda: mantém só o glow/rings de fundo
 
       // Raio da órbita se adapta à quantidade de fotos e ao tamanho da tela, pra não sobreporem demais nem estourar em mobile
       const larguraTela = window.innerWidth;
-      const fatorTela = larguraTela < 480 ? 0.55 : larguraTela < 1024 ? 0.75 : 1;
+      const fatorTela = larguraTela < 480 ? 0.55 : larguraTela < 1024 ? 0.75 : 1.15;
       const raioBase = Math.round((escolhidos.length <= 3 ? 190 : 230) * fatorTela);
       const passoBase = 360 / escolhidos.length;
 
       orbita.innerHTML = escolhidos.map((c, i) => `
-        <a class="bola3d-foto" data-oferta-id="${c.id}" href="#ofertas" aria-label="Ver ${c.titulo} na seção de ofertas">
+        <a class="bola3d-foto" data-oferta-id="${c.id}" data-fixo="${idsFixos.has(c.id)}" href="#ofertas" aria-label="Ver ${c.titulo} na seção de ofertas">
           <div class="bola3d-foto-pendulo">
             <img src="conteudo/fotos/${c.fotos[0]}" alt="${c.titulo}" />
             <span class="bola3d-tag">R$ ${c.preco}</span>
@@ -1153,6 +1269,47 @@
       }
       requestAnimationFrame(animarOrbita);
 
+      // Revezamento ao vivo: de tempos em tempos, uma das vagas não-fixas troca de carro (fade
+      // rápido no meio da troca), pra o globo ir passeando pelo catálogo inteiro em vez de travar
+      // sempre nos mesmos 5. A vaga fixa (carro particular) nunca entra nesse sorteio.
+      const elsRotativos = fotosEls.filter(el => el.dataset.fixo !== 'true');
+      if (elsRotativos.length && poolRotativo.length > vagasRotativas) {
+        const idsExibidos = new Set(rotativosIniciais.map(c => c.id));
+        const embaralhar = (arr) => arr.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(([, v]) => v);
+        let fila = [];
+        const proximoDaFila = () => {
+          if (!fila.length) fila = embaralhar(poolRotativo.filter(c => !idsExibidos.has(c.id)));
+          return fila.shift();
+        };
+
+        const ROTACAO_INTERVALO_MS = 25000;
+        setInterval(() => {
+          const proximo = proximoDaFila();
+          if (!proximo) return;
+          const alvo = elsRotativos[Math.floor(Math.random() * elsRotativos.length)];
+          const idAtual = alvo.getAttribute('data-oferta-id');
+          const pendulo = alvo.querySelector('.bola3d-foto-pendulo');
+          const img = pendulo.querySelector('img');
+          const tag = pendulo.querySelector('.bola3d-tag');
+
+          pendulo.style.opacity = '0';
+          setTimeout(() => {
+            img.src = `conteudo/fotos/${proximo.fotos[0]}`;
+            img.alt = proximo.titulo;
+            tag.textContent = `R$ ${proximo.preco}`;
+            alvo.setAttribute('data-oferta-id', proximo.id);
+            alvo.setAttribute('aria-label', `Ver ${proximo.titulo} na seção de ofertas`);
+
+            idsExibidos.delete(Number(idAtual));
+            idsExibidos.add(proximo.id);
+            const carroAnterior = poolRotativo.find(c => String(c.id) === idAtual);
+            if (carroAnterior) fila.push(carroAnterior);
+
+            pendulo.style.opacity = '1';
+          }, 550);
+        }, ROTACAO_INTERVALO_MS);
+      }
+
       // Clique numa foto: rola suavemente até o anúncio correspondente na grade de ofertas abaixo
       orbita.querySelectorAll('.bola3d-foto').forEach(foto => {
         foto.addEventListener('click', (e) => {
@@ -1199,7 +1356,7 @@
     function calcularOfertasQuentes(carros) {
       const contador = document.getElementById('contadorQuentes');
       if (!contador) return;
-      const quentes = carros.filter(c => c.destaque).length;
+      const quentes = carros.filter(c => c.destaque || c.loja === 'Particular').length;
       contador.textContent = quentes > 0 ? `${quentes} em alta hoje` : 'novidades em breve';
     }
 
@@ -1420,16 +1577,26 @@
       });
     }
 
-    function renderizarDeals(carros) {
+    function renderizarDeals(carros, filtrosAtivos) {
       const grid = document.getElementById('dealsGrid');
       if (!carros.length) {
-        grid.innerHTML = '<p style="color:#8888a0;">Nenhuma oferta cadastrada no momento.</p>';
+        grid.innerHTML = filtrosAtivos
+          ? `<div class="deals-empty">
+              <p>Nenhuma oferta encontrada com esses filtros.</p>
+              <button type="button" class="btn-secondary" id="dealsEmptyLimparBtn">Limpar filtros</button>
+            </div>`
+          : '<p style="color:#8888a0;">Nenhuma oferta cadastrada no momento.</p>';
+        const btnLimpar = document.getElementById('dealsEmptyLimparBtn');
+        if (btnLimpar) btnLimpar.addEventListener('click', limparFiltros);
         return;
       }
       grid.innerHTML = carros.map((c, index) => {
         const mensagem = encodeURIComponent(`Tenho interesse no ${c.titulo} anunciado na AchadozAuto`);
         const delay = Math.min(index + 1, 4);
         const temFoto = c.fotos && c.fotos.length > 0;
+        // Carro de dono particular sempre entra como destaque, mesmo que o campo não tenha
+        // sido marcado manualmente no painel — é a mesma regra aplicada no globo do hero.
+        const destaqueExibido = c.destaque || (c.loja === 'Particular' ? '🔥 Destaque' : null);
         // Carrossel só entra em cena quando existe mais de 1 foto; com 0 ou 1 foto o comportamento
         // continua exatamente como antes (placeholder ou imagem única, sem setas/bolinhas/contador).
         const imagemHtml = temFoto
@@ -1440,7 +1607,7 @@
           <div class="deal-card reveal reveal-delay-${delay}" data-oferta-id="${c.id}">
             <div class="deal-card-image">
               ${imagemHtml}
-              ${c.destaque ? `<span class="deal-tag">${c.destaque}</span>` : ''}
+              ${destaqueExibido ? `<span class="deal-tag">${destaqueExibido}</span>` : ''}
             </div>
             <div class="deal-card-body">
               <div class="deal-price"><span class="price-currency">R$</span> ${c.preco}</div>
@@ -1463,6 +1630,226 @@
       aplicarSelosFipe(carros);
       inicializarCarrosseis();
       inicializarZoomLightbox();
+    }
+
+    // ===== BARRA DE FILTROS: busca livre + marca/modelo/preço/ano/km/combustível/câmbio =====
+    // 100% client-side (o volume de ~150 carros não justifica endpoint de busca no backend).
+    // Independente da "Pesquisa Inteligente" (modal que monta mensagem de WhatsApp) — não reutiliza
+    // nem altera nada daquele módulo.
+    function normalizarTextoFiltro(s) {
+      return (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
+
+    function extrairAnosDoCampo(anoStr) {
+      const nums = (anoStr || '').match(/\d{4}/g);
+      if (!nums || !nums.length) return { min: null, max: null };
+      const vals = nums.map(Number);
+      return { min: Math.min(...vals), max: Math.max(...vals) };
+    }
+
+    function extrairKmNumero(kmStr) {
+      const limpo = (kmStr || '').replace(/[^\d]/g, '');
+      return limpo ? parseInt(limpo, 10) : null;
+    }
+
+    // Palavra toda em maiúsculas, sem dígito e "longa" é formatação do scraper (ex: "VOYAGE"),
+    // não sigla real de modelo (ex: "S10", "RAM", "BMW", "HR-V" ficam como estão).
+    function normalizarCapitalizacaoPalavra(w) {
+      if (!w) return w;
+      const temMinuscula = /[a-zà-ÿ]/.test(w);
+      if (!temMinuscula && w.length > 4 && !/\d/.test(w)) {
+        return w.charAt(0) + w.slice(1).toLowerCase();
+      }
+      if (w === w.toLowerCase()) return w.charAt(0).toUpperCase() + w.slice(1);
+      return w;
+    }
+    function normalizarCapitalizacao(s) {
+      return (s || '').split(' ').map(normalizarCapitalizacaoPalavra).join(' ');
+    }
+
+    function coletarTokensModelo(texto) {
+      const tokens = (texto || '').split(/\s+/).filter(Boolean);
+      const resultado = [];
+      for (const tok of tokens) {
+        if (/^\d/.test(tok)) break;
+        resultado.push(tok);
+      }
+      return resultado;
+    }
+
+    // Deriva um "modelo" a partir do título (não existe campo separado nos dados da RH Motors).
+    // Estratégia: remove o prefixo de marca quando presente, depois pega os tokens iniciais até
+    // o primeiro token que comece com dígito (motorização/ano/opcionais). Fallback pro título
+    // completo quando a marca "engole" o próprio nome do modelo (ex: marca "arrizo").
+    function extrairModeloDoTitulo(marca, titulo) {
+      const tituloTrim = (titulo || '').trim();
+      const marcaTrim = (marca || '').trim();
+      let resto = tituloTrim;
+      if (marcaTrim && tituloTrim.toLowerCase().startsWith(marcaTrim.toLowerCase())) {
+        const semMarca = tituloTrim.slice(marcaTrim.length).trim();
+        if (semMarca) resto = semMarca;
+      }
+      let modeloTokens = coletarTokensModelo(resto);
+      if (!modeloTokens.length) modeloTokens = coletarTokensModelo(tituloTrim);
+      const bruto = modeloTokens.length ? modeloTokens.join(' ') : (resto.split(/\s+/)[0] || resto);
+      return normalizarCapitalizacao(bruto);
+    }
+
+    function popularSelect(selectEl, valores, manterSelecionado) {
+      const atual = manterSelecionado ? selectEl.value : '';
+      const primeiraOpcao = selectEl.options[0];
+      selectEl.innerHTML = '';
+      selectEl.appendChild(primeiraOpcao);
+      valores.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.valor;
+        opt.textContent = v.rotulo;
+        selectEl.appendChild(opt);
+      });
+      if (atual && valores.some(v => v.valor === atual)) selectEl.value = atual;
+    }
+
+    const filtroEls = {};
+
+    function inicializarFiltros(carros) {
+      ['filtroTexto', 'filtroMarca', 'filtroModelo', 'filtroPrecoMin', 'filtroPrecoMax',
+       'filtroAnoDe', 'filtroAnoAte', 'filtroKmMax', 'filtroCombustivel', 'filtroCambio', 'filtroResultado']
+        .forEach(id => { filtroEls[id] = document.getElementById(id); });
+
+      const marcas = [...new Set(carros.map(c => c.marca).filter(Boolean))]
+        .sort((a, b) => normalizarCapitalizacao(a).localeCompare(normalizarCapitalizacao(b)))
+        .map(m => ({ valor: m, rotulo: normalizarCapitalizacao(m) }));
+      popularSelect(filtroEls.filtroMarca, marcas);
+
+      const anos = [...new Set(carros.flatMap(c => {
+        const { min, max } = extrairAnosDoCampo(c.ano);
+        return [min, max].filter(n => n !== null);
+      }))].sort((a, b) => a - b);
+      const anosOpcoes = anos.map(a => ({ valor: String(a), rotulo: String(a) }));
+      popularSelect(filtroEls.filtroAnoDe, anosOpcoes);
+      popularSelect(filtroEls.filtroAnoAte, anosOpcoes);
+
+      const combustiveis = [...new Set(carros.map(c => c.combustivel).filter(Boolean))]
+        .sort()
+        .map(v => ({ valor: v, rotulo: v }));
+      popularSelect(filtroEls.filtroCombustivel, combustiveis);
+
+      const cambios = [...new Set(carros.map(c => c.cambio).filter(Boolean))]
+        .sort()
+        .map(v => ({ valor: v, rotulo: v }));
+      popularSelect(filtroEls.filtroCambio, cambios);
+
+      atualizarOpcoesModelo(carros);
+
+      let debounceTexto = null;
+      filtroEls.filtroTexto.addEventListener('input', () => {
+        clearTimeout(debounceTexto);
+        debounceTexto = setTimeout(aplicarFiltros, 250);
+      });
+      filtroEls.filtroMarca.addEventListener('change', () => {
+        atualizarOpcoesModelo(carros);
+        aplicarFiltros();
+      });
+      ['filtroModelo', 'filtroAnoDe', 'filtroAnoAte', 'filtroCombustivel', 'filtroCambio']
+        .forEach(id => filtroEls[id].addEventListener('change', aplicarFiltros));
+
+      let debounceNumero = null;
+      ['filtroPrecoMin', 'filtroPrecoMax', 'filtroKmMax'].forEach(id => {
+        filtroEls[id].addEventListener('input', () => {
+          clearTimeout(debounceNumero);
+          debounceNumero = setTimeout(aplicarFiltros, 300);
+        });
+      });
+
+      document.getElementById('filtroLimparBtn').addEventListener('click', limparFiltros);
+    }
+
+    // Recalcula as opções do <select> de modelo com base na marca selecionada (ou em todos os
+    // carros, se nenhuma marca estiver escolhida), preservando o valor atual quando ainda existir.
+    function atualizarOpcoesModelo(carros) {
+      const marcaSelecionada = filtroEls.filtroMarca.value;
+      const base = marcaSelecionada ? carros.filter(c => c.marca === marcaSelecionada) : carros;
+      const modelos = [...new Set(base.map(c => extrairModeloDoTitulo(c.marca, c.titulo)))]
+        .sort((a, b) => a.localeCompare(b))
+        .map(m => ({ valor: m, rotulo: m }));
+      popularSelect(filtroEls.filtroModelo, modelos, true);
+    }
+
+    function coletarCriteriosFiltro() {
+      return {
+        texto: normalizarTextoFiltro(filtroEls.filtroTexto.value),
+        marca: filtroEls.filtroMarca.value,
+        modelo: filtroEls.filtroModelo.value,
+        precoMin: filtroEls.filtroPrecoMin.value ? parseFloat(filtroEls.filtroPrecoMin.value) : null,
+        precoMax: filtroEls.filtroPrecoMax.value ? parseFloat(filtroEls.filtroPrecoMax.value) : null,
+        anoDe: filtroEls.filtroAnoDe.value ? parseInt(filtroEls.filtroAnoDe.value, 10) : null,
+        anoAte: filtroEls.filtroAnoAte.value ? parseInt(filtroEls.filtroAnoAte.value, 10) : null,
+        kmMax: filtroEls.filtroKmMax.value ? parseInt(filtroEls.filtroKmMax.value, 10) : null,
+        combustivel: filtroEls.filtroCombustivel.value,
+        cambio: filtroEls.filtroCambio.value
+      };
+    }
+
+    function algumFiltroAtivo(criterios) {
+      return Object.values(criterios).some(v => v !== null && v !== '');
+    }
+
+    function aplicarFiltros() {
+      const criterios = coletarCriteriosFiltro();
+      const filtrosAtivos = algumFiltroAtivo(criterios);
+
+      const filtrados = TODOS_CARROS.filter(c => {
+        if (criterios.texto) {
+          const alvo = normalizarTextoFiltro(`${c.marca} ${c.titulo}`);
+          if (alvo.indexOf(criterios.texto) === -1) return false;
+        }
+        if (criterios.marca && c.marca !== criterios.marca) return false;
+        if (criterios.modelo && extrairModeloDoTitulo(c.marca, c.titulo) !== criterios.modelo) return false;
+
+        if (criterios.precoMin !== null || criterios.precoMax !== null) {
+          const preco = parseValorBR(c.preco);
+          if (criterios.precoMin !== null && (preco === null || preco < criterios.precoMin)) return false;
+          if (criterios.precoMax !== null && (preco === null || preco > criterios.precoMax)) return false;
+        }
+
+        if (criterios.anoDe !== null || criterios.anoAte !== null) {
+          const anos = extrairAnosDoCampo(c.ano);
+          if (criterios.anoDe !== null && (anos.max === null || anos.max < criterios.anoDe)) return false;
+          if (criterios.anoAte !== null && (anos.min === null || anos.min > criterios.anoAte)) return false;
+        }
+
+        if (criterios.kmMax !== null) {
+          const km = extrairKmNumero(c.km);
+          if (km === null || km > criterios.kmMax) return false;
+        }
+
+        if (criterios.combustivel && c.combustivel !== criterios.combustivel) return false;
+        if (criterios.cambio && c.cambio !== criterios.cambio) return false;
+
+        return true;
+      });
+
+      renderizarDeals(filtrados, filtrosAtivos);
+
+      const total = TODOS_CARROS.length;
+      filtroEls.filtroResultado.innerHTML = filtrosAtivos
+        ? `<strong>${filtrados.length}</strong> de ${total} ofertas`
+        : `<strong>${total}</strong> ofertas no total`;
+    }
+
+    function limparFiltros() {
+      filtroEls.filtroTexto.value = '';
+      filtroEls.filtroMarca.value = '';
+      filtroEls.filtroPrecoMin.value = '';
+      filtroEls.filtroPrecoMax.value = '';
+      filtroEls.filtroAnoDe.value = '';
+      filtroEls.filtroAnoAte.value = '';
+      filtroEls.filtroKmMax.value = '';
+      filtroEls.filtroCombustivel.value = '';
+      filtroEls.filtroCambio.value = '';
+      atualizarOpcoesModelo(TODOS_CARROS);
+      filtroEls.filtroModelo.value = '';
+      aplicarFiltros();
     }
 
     // ===== COMPARATIVO COM A TABELA FIPE =====
