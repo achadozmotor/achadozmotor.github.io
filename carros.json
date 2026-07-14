@@ -3186,5 +3186,30 @@
     "fipePreco": "R$ 66.119,00",
     "fipeDescontoPct": -5.9,
     "fipeConfianca": "alta"
+  },
+  {
+    "id": 156,
+    "titulo": "Honda HR-V EXL 1.8 Flex",
+    "marca": "Honda",
+    "preco": "77.990",
+    "ano": "2016",
+    "km": "129.000 km",
+    "cambio": "CVT",
+    "combustivel": "Flex",
+    "loja": "Particular",
+    "aceitaTroca": true,
+    "destaque": "🔥 Destaque",
+    "emoji": "🚗",
+    "plataformas": [],
+    "fotos": [
+      "honda-hr-v-exl-1-8-flex-156-01.jpeg",
+      "honda-hr-v-exl-1-8-flex-156-02.jpeg",
+      "honda-hr-v-exl-1-8-flex-156-03.jpeg",
+      "honda-hr-v-exl-1-8-flex-156-04.jpeg",
+      "honda-hr-v-exl-1-8-flex-156-05.jpeg"
+    ],
+    "fipePreco": null,
+    "fipeDescontoPct": null,
+    "fipeConfianca": null
   }
 ]
