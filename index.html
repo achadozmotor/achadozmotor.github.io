@@ -168,6 +168,16 @@
       font-family: 'Inter', sans-serif; display: inline-flex; align-items: center; gap: 8px;
     }
     .btn-secondary:hover { border-color: #fab005; background: rgba(250, 176, 5, 0.05); }
+    .hero-fipe-linha {
+      display: flex; align-items: flex-start; gap: 10px; margin-top: 20px;
+      font-size: 0.98rem; line-height: 1.55; color: #b0b0c4; max-width: 480px;
+    }
+    .hero-fipe-linha strong { color: #fab005; font-weight: 700; }
+    .hero-fipe-check {
+      flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(250, 176, 5, 0.14); color: #fab005; font-size: 0.72rem; font-weight: 800;
+    }
     .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
     .hero-stat h3 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
     .hero-stat h3 .num-highlight {
@@ -339,6 +349,39 @@
     .how-card p { font-size: 0.9rem; line-height: 1.6; color: #8888a0; }
     .deals { padding: 120px 0; background: rgba(255, 255, 255, 0.015); position: relative; }
     .deals-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; gap: 24px; }
+    /* ===== ACHADO DO DIA (maior desconto vs Fipe, destaque acima da grade) ===== */
+    .achado-dia {
+      display: flex; align-items: stretch; gap: 0; margin-bottom: 32px;
+      background: linear-gradient(135deg, rgba(250,176,5,0.10), rgba(255,107,53,0.06));
+      border: 1px solid rgba(250,176,5,0.30); border-radius: 24px; overflow: hidden;
+      color: inherit; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s;
+    }
+    .achado-dia:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(250,176,5,0.18); }
+    .achado-dia-foto { position: relative; width: 42%; min-height: 240px; flex-shrink: 0; background: #12121a; }
+    .achado-dia-foto img { width: 100%; height: 100%; object-fit: cover; }
+    .achado-dia-foto .placeholder-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .achado-dia-selo {
+      position: absolute; top: 16px; left: 16px; z-index: 2;
+      background: linear-gradient(135deg, #fab005, #ff6b35); color: #0a0a0f;
+      font-weight: 800; font-size: 0.78rem; letter-spacing: 0.02em;
+      padding: 7px 14px; border-radius: 100px; box-shadow: 0 6px 20px rgba(250,176,5,0.4);
+    }
+    .achado-dia-corpo { flex: 1; padding: 32px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+    .achado-dia-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #fab005;
+    }
+    .achado-dia-titulo { font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+    .achado-dia-precos { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+    .achado-dia-preco { font-size: 1.7rem; font-weight: 800; }
+    .achado-dia-preco span { font-size: 1rem; font-weight: 600; color: #8888a0; margin-right: 2px; }
+    .achado-dia-fipe { font-size: 0.9rem; color: #8888a0; text-decoration: line-through; }
+    .achado-dia-economia {
+      display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: 2px;
+      background: rgba(34,197,94,0.14); color: #4ade80; font-weight: 700; font-size: 0.9rem;
+      padding: 6px 12px; border-radius: 100px;
+    }
+    .achado-dia-cta { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #fab005; }
 
     /* ===== BARRA DE FILTROS (busca + marca/modelo/preço/ano/km/combustível/câmbio) =====
        Bloco independente da "Pesquisa Inteligente" (modal que monta mensagem de WhatsApp) —
@@ -643,6 +686,9 @@
       .how-grid { grid-template-columns: 1fr; }
       .deals-grid { grid-template-columns: 1fr; }
       .deals-header { flex-direction: column; align-items: flex-start; }
+      .achado-dia { flex-direction: column; }
+      .achado-dia-foto { width: 100%; min-height: 200px; }
+      .achado-dia-corpo { padding: 24px; }
       .instagram-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
@@ -784,6 +830,10 @@
           As melhores ofertas de carros e motos seminovos nas lojas de Cuiabá.
           Curadoria real, preço justo, oportunidade única.
         </p>
+        <p class="hero-fipe-linha">
+          <span class="hero-fipe-check">✓</span>
+          Cada preço comparado com a <strong>tabela FIPE</strong> — você vê na hora se é achado de verdade.
+        </p>
         <div class="hero-actions">
           <a href="#ofertas" class="btn-primary">
             Ver ofertas
@@ -794,9 +844,9 @@
           </a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><h3><span class="num-highlight">Atualizado</span></h3><p>Toda semana</p></div>
-          <div class="hero-stat"><h3><span class="num-highlight">Curadoria</span></h3><p>Local</p></div>
-          <div class="hero-stat"><h3><span class="num-highlight">Cuiabá</span></h3><p>Cobertura local</p></div>
+          <div class="hero-stat"><h3><span class="num-highlight" id="statTotal">—</span></h3><p>carros no radar</p></div>
+          <div class="hero-stat"><h3><span class="num-highlight" id="statFipe">—</span></h3><p>checados na FIPE</p></div>
+          <div class="hero-stat"><h3><span class="num-highlight" id="statMaxDesc">—</span></h3><p>abaixo da tabela</p></div>
         </div>
       </div>
       <div class="hero-visual">
@@ -860,6 +910,8 @@
         </div>
         <button class="btn-secondary reveal reveal-delay-2" style="flex-shrink:0;">Ver todas →</button>
       </div>
+
+      <a id="achadoDoDia" class="achado-dia reveal reveal-delay-1" hidden></a>
 
       <div class="filtros-bar reveal reveal-delay-2" id="filtrosBar">
         <div class="filtros-busca-linha">
@@ -1222,6 +1274,7 @@
         TODOS_CARROS = carros;
         renderizarMarquee(carros);
         montarHeroVisual(carros);
+        renderizarAchadoDoDia(carros);
         inicializarFiltros(carros);
         aplicarFiltros();
       } catch (err) {
@@ -1240,6 +1293,7 @@
       montarStackDeFotos(carros);
       carregarClimaCuiaba();
       calcularOfertasQuentes(carros);
+      preencherHeroStats(carros);
       aplicarFaseDoDia();
       setInterval(aplicarFaseDoDia, 5 * 60 * 1000); // reavalia a cada 5 min, pra bola ir mudando ao vivo
     }
@@ -1456,6 +1510,62 @@
       if (!contador) return;
       const quentes = carros.filter(c => c.destaque || c.loja === 'Particular').length;
       contador.textContent = quentes > 0 ? `${quentes} em alta hoje` : 'novidades em breve';
+    }
+
+    // Preenche os 3 números do hero com dados reais do carros.json (nada hardcoded):
+    // total de carros, quantos têm preço comparado com a Fipe, e o maior desconto vs tabela.
+    function preencherHeroStats(carros) {
+      const elTotal = document.getElementById('statTotal');
+      const elFipe = document.getElementById('statFipe');
+      const elMax = document.getElementById('statMaxDesc');
+
+      const comFipe = carros.filter(c => typeof c.fipeDescontoPct === 'number');
+      const maiorDesc = comFipe.reduce((max, c) => Math.max(max, c.fipeDescontoPct), 0);
+
+      if (elTotal) elTotal.textContent = carros.length;
+      if (elFipe) elFipe.textContent = comFipe.length;
+      if (elMax) elMax.textContent = maiorDesc >= 1 ? `até ${Math.round(maiorDesc)}%` : '—';
+    }
+
+    // ===== ACHADO DO DIA: o carro com maior desconto vs Fipe, em destaque acima da grade =====
+    // Fixo (não reage aos filtros) — é o gancho da home. Só aparece quando há um desconto real.
+    const ACHADO_DIA_DESCONTO_MINIMO = 10; // % abaixo da Fipe pra virar "achado do dia"
+    function renderizarAchadoDoDia(carros) {
+      const el = document.getElementById('achadoDoDia');
+      if (!el) return;
+      const candidatos = carros.filter(c => typeof c.fipeDescontoPct === 'number' && c.fipeDescontoPct >= ACHADO_DIA_DESCONTO_MINIMO);
+      if (!candidatos.length) { el.hidden = true; return; }
+      const c = candidatos.reduce((a, b) => (b.fipeDescontoPct > a.fipeDescontoPct ? b : a));
+
+      const temFoto = c.fotos && c.fotos.length > 0;
+      const fotoHtml = temFoto
+        ? `<img src="conteudo/fotos/${c.fotos[0]}" alt="${c.titulo}" loading="lazy" />`
+        : `<span class="placeholder-icon">${c.emoji || '🚗'}</span>`;
+
+      const fipeVal = parseValorBR(c.fipePreco);
+      const precoVal = parseValorBR(c.preco);
+      const economia = (fipeVal && precoVal && fipeVal > precoVal)
+        ? `R$ ${Math.round(fipeVal - precoVal).toLocaleString('pt-BR')}`
+        : null;
+
+      el.href = `carros/${slugCarro(c)}.html`;
+      el.innerHTML = `
+        <div class="achado-dia-foto">
+          ${fotoHtml}
+          <span class="achado-dia-selo">🏆 Achado do dia</span>
+        </div>
+        <div class="achado-dia-corpo">
+          <span class="achado-dia-label">Maior desconto vs. tabela Fipe</span>
+          <h3 class="achado-dia-titulo">${c.titulo}</h3>
+          <div class="achado-dia-precos">
+            <span class="achado-dia-preco"><span>R$</span>${c.preco}</span>
+            ${c.fipePreco ? `<span class="achado-dia-fipe">Fipe ${c.fipePreco}</span>` : ''}
+          </div>
+          <span class="achado-dia-economia">▼ ${Math.round(c.fipeDescontoPct)}% abaixo da Fipe${economia ? ` · economize ${economia}` : ''}</span>
+          <span class="achado-dia-cta">Ver esse achado →</span>
+        </div>
+      `;
+      el.hidden = false;
     }
 
     function renderizarMarquee(carros) {
@@ -1987,10 +2097,32 @@
       return null;
     }
 
+    // Monta o HTML do selo Fipe a partir de um % de desconto e uma fonte de referência.
+    function montarSeloFipeHtml(percentual, fonte) {
+      return `
+        <div class="fipe-badge">
+          <span class="fipe-badge-selo">FIPE</span>
+          <span class="fipe-badge-texto">${percentual.toFixed(0)}% abaixo da Fipe</span>
+        </div>
+        <div class="fipe-fonte">${fonte}</div>
+      `;
+    }
+
     async function aplicarSelosFipe(carros) {
       for (const c of carros) {
         const slot = document.getElementById(`fipe-${c.id}`);
         if (!slot) continue;
+
+        // Caminho principal: desconto já calculado no dashboard e salvo no carros.json.
+        // (Nenhum anúncio usa consulta Fipe ao vivo hoje — mas o fallback abaixo segue funcionando.)
+        if (typeof c.fipeDescontoPct === 'number') {
+          if (c.fipeDescontoPct >= FIPE_DESCONTO_MINIMO) {
+            const fonte = c.fipePreco ? `Tabela Fipe: ${c.fipePreco}` : 'Tabela Fipe';
+            slot.innerHTML = montarSeloFipeHtml(c.fipeDescontoPct, fonte);
+          }
+          continue;
+        }
+
         const resultado = await buscarValorFipe(c);
         if (!resultado || !resultado.valor) continue;
         const precoAnuncio = parseValorBR(c.preco);
@@ -1999,13 +2131,7 @@
         const percentual = ((resultado.valor - precoAnuncio) / resultado.valor) * 100;
         if (percentual < FIPE_DESCONTO_MINIMO) continue; // só mostra quando o negócio é realmente bom
 
-        slot.innerHTML = `
-          <div class="fipe-badge">
-            <span class="fipe-badge-selo">FIPE</span>
-            <span class="fipe-badge-texto">${percentual.toFixed(0)}% abaixo da Fipe</span>
-          </div>
-          <div class="fipe-fonte">Valor de referência: ${resultado.fonte}</div>
-        `;
+        slot.innerHTML = montarSeloFipeHtml(percentual, `Valor de referência: ${resultado.fonte}`);
       }
     }
 
