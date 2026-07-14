@@ -12,10 +12,10 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AchadozAuto — Ofertas de Carros e Motos em Cuiabá</title>
-  <meta name="description" content="As melhores ofertas de carros e motos seminovos em Cuiabá-MT. Encontre seu próximo achado." />
-  <meta property="og:title" content="AchadozAuto — Ofertas de Carros e Motos em Cuiabá" />
-  <meta property="og:description" content="As melhores ofertas de carros e motos seminovos em Cuiabá-MT. Encontre seu próximo achado." />
+  <title>AchadozAuto — Ofertas de Carros e Motos Seminovos em Cuiabá-MT</title>
+  <meta name="description" content="Carros e motos seminovos e usados em Cuiabá-MT, garimpados todo dia nas lojas e com particulares — com comparativo de preço contra a tabela FIPE. Veja os achados de hoje." />
+  <meta property="og:title" content="AchadozAuto — Ofertas de Carros e Motos Seminovos em Cuiabá-MT" />
+  <meta property="og:description" content="Carros e motos seminovos e usados em Cuiabá-MT, garimpados todo dia nas lojas e com particulares — com comparativo de preço contra a tabela FIPE. Veja os achados de hoje." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://achadozmotor.github.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -30,16 +30,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoDealer",
-    "name": "AchadozAuto",
-    "description": "As melhores ofertas de carros e motos seminovos em Cuiabá-MT.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Cuiabá",
-      "addressRegion": "MT",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55 65 99965-8968"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://achadozmotor.github.io/#org",
+        "name": "AchadozAuto",
+        "url": "https://achadozmotor.github.io/",
+        "logo": "https://achadozmotor.github.io/assets/favicon-512.png",
+        "description": "Curadoria diária de ofertas de carros e motos seminovos em Cuiabá-MT — garimpamos as lojas e particulares da cidade e comparamos cada preço com a tabela FIPE.",
+        "areaServed": {
+          "@type": "City",
+          "name": "Cuiabá",
+          "address": { "@type": "PostalAddress", "addressRegion": "MT", "addressCountry": "BR" }
+        },
+        "telephone": "+55 65 99965-8968",
+        "sameAs": ["https://instagram.com/achadoz.auto"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://achadozmotor.github.io/#site",
+        "url": "https://achadozmotor.github.io/",
+        "name": "AchadozAuto",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://achadozmotor.github.io/#org" }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,6 +79,16 @@
     ::-webkit-scrollbar-track { background: #0a0a0f; }
     ::-webkit-scrollbar-thumb { background: #fab005; border-radius: 3px; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    /* ===== FAQ (SEO/GEO: perguntas reais do público + FAQPage schema) ===== */
+    .faq { padding: 100px 0; }
+    .faq-lista { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; }
+    .faq-item summary { cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: #fab005; font-size: 1.3rem; font-weight: 400; flex-shrink: 0; transition: transform 0.25s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { padding: 0 22px 18px; color: #b0b0c4; font-size: 0.95rem; line-height: 1.65; }
+    .faq-item p a { color: #fab005; }
     .section-label {
       font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em;
       text-transform: uppercase; color: #fab005; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
@@ -883,6 +908,9 @@
       </div>
 
       <div class="deals-grid" id="dealsGrid"></div>
+      <noscript>
+        <p style="text-align: center; padding: 24px;">As ofertas carregam via JavaScript — sem ele, veja a <a href="carros/" style="color: #fab005;">lista completa de carros e motos à venda em Cuiabá</a>.</p>
+      </noscript>
     </div>
   </section>
 
@@ -993,6 +1021,53 @@
     </div>
   </section>
 
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-label reveal">Perguntas frequentes</div>
+      <h2 class="section-title reveal reveal-delay-1">Dúvidas de quem busca <span class="highlight">carro em Cuiabá</span></h2>
+      <div class="faq-lista">
+        <details class="faq-item">
+          <summary>Onde encontrar as melhores ofertas de carros usados em Cuiabá?</summary>
+          <p>A AchadozAuto garimpa todos os dias as lojas e anúncios de particulares de Cuiabá-MT e publica aqui só o que realmente vale a pena — com preço, km, ano e comparativo contra a tabela FIPE. É curadoria local, não um classificado onde qualquer anúncio entra. Veja a <a href="carros/">lista completa de ofertas</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>A AchadozAuto é uma loja de carros?</summary>
+          <p>Não. Somos uma curadoria independente: encontramos as melhores ofertas nas lojas e com vendedores particulares de Cuiabá e mostramos pra você. A negociação é feita direto com o vendedor — a gente só aponta o achado.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como sei se um carro está realmente barato?</summary>
+          <p>Comparamos o preço anunciado de cada veículo com a tabela FIPE do mesmo modelo e ano. Quando o desconto é relevante, o anúncio recebe o selo de "% abaixo da FIPE" — assim você enxerga na hora se é achado de verdade ou preço inflado.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Custa alguma coisa usar a AchadozAuto?</summary>
+          <p>Nada. Pra quem está comprando, o site e o Instagram <a href="https://instagram.com/achadoz.auto" target="_blank" rel="noopener noreferrer">@achadoz.auto</a> são 100% gratuitos, sem cadastro e sem taxa de intermediação.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como faço pra comprar um carro anunciado aqui?</summary>
+          <p>Clica em "Ver oferta" no carro que te interessou e fala direto com a gente no WhatsApp — indicamos o vendedor e você negocia sem intermediário. Dica: confira sempre o veículo pessoalmente e o histórico (laudo, débitos, sinistro) antes de fechar.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Tenho um carro pra vender em Cuiabá — como anuncio?</summary>
+          <p>Lojista ou particular, chama no <a href="https://wa.me/5565999658968?text=Quero%20anunciar%20um%20ve%C3%ADculo%20na%20AchadozAuto" target="_blank" rel="noopener noreferrer">WhatsApp</a>. Se a oferta for boa de verdade, ela entra na curadoria do site e pode aparecer no Instagram também.</p>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Onde encontrar as melhores ofertas de carros usados em Cuiabá?", "acceptedAnswer": { "@type": "Answer", "text": "A AchadozAuto garimpa todos os dias as lojas e anúncios de particulares de Cuiabá-MT e publica só o que vale a pena — com preço, km, ano e comparativo contra a tabela FIPE. É curadoria local, não um classificado aberto." } },
+        { "@type": "Question", "name": "A AchadozAuto é uma loja de carros?", "acceptedAnswer": { "@type": "Answer", "text": "Não. É uma curadoria independente: encontra as melhores ofertas nas lojas e com vendedores particulares de Cuiabá e mostra pro comprador. A negociação é feita direto com o vendedor." } },
+        { "@type": "Question", "name": "Como sei se um carro está realmente barato?", "acceptedAnswer": { "@type": "Answer", "text": "Cada veículo tem o preço comparado com a tabela FIPE do mesmo modelo e ano. Quando o desconto é relevante, o anúncio recebe o selo de porcentagem abaixo da FIPE." } },
+        { "@type": "Question", "name": "Custa alguma coisa usar a AchadozAuto?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Pra quem compra, o site e o Instagram @achadoz.auto são gratuitos, sem cadastro e sem taxa de intermediação." } },
+        { "@type": "Question", "name": "Como faço pra comprar um carro anunciado na AchadozAuto?", "acceptedAnswer": { "@type": "Answer", "text": "Basta clicar em Ver oferta e falar no WhatsApp — a AchadozAuto indica o vendedor e a negociação é direta, sem intermediário. Recomenda-se sempre conferir o veículo pessoalmente e o histórico antes de fechar." } },
+        { "@type": "Question", "name": "Como anunciar um carro pra vender em Cuiabá na AchadozAuto?", "acceptedAnswer": { "@type": "Answer", "text": "Lojistas e particulares podem chamar no WhatsApp +55 65 99965-8968. Ofertas boas entram na curadoria do site e podem aparecer no Instagram @achadoz.auto." } }
+      ]
+    }
+    </script>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1005,6 +1080,8 @@
           <ul>
             <li><a href="#como-funciona">Como funciona</a></li>
             <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="carros/">Todos os carros e motos (lista completa)</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
             <li><a href="#vendedores">Para lojistas</a></li>
             <li><a href="#instagram">Instagram</a></li>
           </ul>
@@ -1126,6 +1203,17 @@
 
     // ===== CARREGAR CARROS DO carros.json (dinâmico) =====
     let TODOS_CARROS = [];
+
+    // Mesma lógica da função slugCarro() do gerar-seo.js — se mudar aqui, mudar lá.
+    // Aponta o card pra página estática indexável do veículo (carros/<slug>.html).
+    function slugCarro(carro) {
+      const base = `${carro.titulo}`
+        .toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      return `${base}-${carro.id}`;
+    }
 
     async function carregarOfertas() {
       try {
@@ -1622,7 +1710,7 @@
             <div class="deal-card-body">
               <div class="deal-price"><span class="price-currency">R$</span> ${c.preco}</div>
               <div class="fipe-slot" id="fipe-${c.id}"></div>
-              <div class="deal-title">${c.titulo}</div>
+              <a class="deal-title" href="carros/${slugCarro(c)}.html" style="display: block; color: inherit; text-decoration: none;">${c.titulo}</a>
               <div class="deal-meta">
                 <span>📅 ${c.ano || ''}</span>
                 <span>📏 ${c.km || ''}</span>
