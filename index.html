@@ -210,7 +210,7 @@
     .bola3d-cena { cursor: grab; user-select: none; -webkit-user-select: none; }
     .bola3d-cena.arrastando-globo,
     .bola3d-cena.arrastando-globo * { cursor: grabbing !important; user-select: none !important; -webkit-user-select: none !important; }
-    .hero-3d-container canvas { width: 100% !important; height: 100% !important; border-radius: 24px; }
+    .hero-3d-container canvas:not(.sol-canvas) { width: 100% !important; height: 100% !important; border-radius: 24px; }
     .hero-3d-fallback {
       width: 100%; aspect-ratio: 1; background: radial-gradient(ellipse at center, rgba(250, 176, 5, 0.08) 0%, transparent 70%);
       border-radius: 24px; display: flex; align-items: center; justify-content: center; position: relative; overflow: visible;
@@ -231,29 +231,32 @@
       display: flex; align-items: center; justify-content: center;
       perspective: 1400px; transform-style: preserve-3d;
     }
-    /* Canvas WebGL: esfera do sol renderizada via Three.js (ver script) */
+    /* Canvas WebGL: esfera do sol renderizada via Three.js (ver script).
+       Maior que o quadrado do hero de propósito: os raios vazam pra página em volta
+       (a câmera compensa no script pra esfera manter o mesmo tamanho na tela). */
     .sol-canvas {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-      border-radius: 50%; display: block;
+      position: absolute; top: 50%; left: 50%; width: 240%; height: 240%; z-index: 1;
+      transform: translate(-50%, -50%); display: block; pointer-events: none;
     }
     /* Anel orbital 3D: cada foto recebe seu próprio movimento via JS (ver script), aqui só o ponto-âncora 3D */
     .bola3d-orbita {
       position: absolute; top: 50%; left: 50%; width: 1px; height: 1px;
       transform: translate(-50%, -50%); transform-style: preserve-3d;
     }
+    /* Fotos redondas, como planetas orbitando o sol */
     .bola3d-foto {
-      position: absolute; top: 50%; left: 50%; width: 150px; height: 111px; margin: -5px 0 0 -75px;
+      position: absolute; top: 50%; left: 50%; width: 132px; height: 132px; margin: -66px 0 0 -66px;
       transform-style: preserve-3d; backface-visibility: hidden; text-decoration: none; display: block;
     }
     .bola3d-foto-pendulo {
-      width: 100%; height: 100%; transform-origin: 50% 0%; border-radius: 16px; overflow: hidden;
+      width: 100%; height: 100%; transform-origin: 50% 50%; border-radius: 50%; overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
       background: #14141c; cursor: pointer; display: flex; align-items: center; justify-content: center;
       transition: box-shadow 0.3s, opacity 0.5s ease;
     }
-    .bola3d-foto-pendulo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .bola3d-foto-pendulo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .bola3d-foto .bola3d-tag {
-      position: absolute; bottom: 6px; left: 6px; padding: 3px 10px; background: rgba(10, 10, 15, 0.8);
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 3px 10px; background: rgba(10, 10, 15, 0.8);
       backdrop-filter: blur(8px); border-radius: 100px; font-size: 0.65rem; font-weight: 700; color: #fab005;
       border: 1px solid rgba(250, 176, 5, 0.25);
     }
@@ -323,11 +326,6 @@
     .clima-divisor { width: 100%; height: 1px; background: rgba(255, 255, 255, 0.08); }
     .clima-quente { display: flex; align-items: center; gap: 4px; font-size: 0.68rem; color: #fab005; font-weight: 600; text-align: center; line-height: 1.3; }
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-    .marquee-section { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); border-bottom: 1px solid rgba(255, 255, 255, 0.04); overflow: hidden; background: rgba(255, 255, 255, 0.02); }
-    .marquee-track { display: flex; gap: 48px; animation: marquee 30s linear infinite; width: max-content; }
-    .marquee-track span { font-size: 0.85rem; color: #555570; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-    .marquee-track span .sep { color: #fab005; opacity: 0.5; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .how { padding: 120px 0; position: relative; }
     .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
     .how-card {
@@ -347,6 +345,9 @@
     }
     .how-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
     .how-card p { font-size: 0.9rem; line-height: 1.6; color: #8888a0; }
+    a.how-card--cta { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+    .how-card--cta:hover { border-color: rgba(37, 211, 102, 0.4); }
+    .how-card-cta-link { display: inline-block; margin-top: 16px; font-size: 0.85rem; font-weight: 600; color: #25d366; }
     .deals { padding: 120px 0; background: rgba(255, 255, 255, 0.015); position: relative; }
     .deals-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; gap: 24px; }
     /* ===== ACHADO DO DIA (maior desconto vs Fipe, destaque acima da grade) ===== */
@@ -673,7 +674,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .clima-tubo { height: 36px; }
       .clima-widget { width: 68px; top: 3%; right: 3%; padding: 6px 5px; }
-      .bola3d-foto { width: 96px; height: 70px; margin: -3px 0 0 -48px; }
+      .bola3d-foto { width: 88px; height: 88px; margin: -44px 0 0 -44px; }
     }
     @media (max-width: 768px) {
       .navbar-links { display: none; }
@@ -890,10 +891,6 @@
     </div>
   </section>
 
-  <div class="marquee-section">
-    <div class="marquee-track" id="marquee"></div>
-  </div>
-
   <!-- Entrada de destaque pra Pesquisa Inteligente — reutiliza o mesmo modal do botão flutuante -->
   <div class="container busca-destaque-wrap reveal">
     <button type="button" id="buscaDestaqueBtn" class="btn-primary busca-destaque-btn">
@@ -978,12 +975,13 @@
           <h3>Varredura diária</h3>
           <p>Nossos robôs buscam ofertas reais nas lojas de Cuiabá — preço, km, ano, tudo que importa.</p>
         </div>
-        <div class="how-card reveal reveal-delay-2">
+        <a href="https://wa.me/5565999658968?text=Oi%2C%20quero%20uma%20curadoria%20pessoal!%20Procuro%3A%20(carro%2Fmoto%2C%20modelo%2C%20valor%20at%C3%A9%2C%20ano)" target="_blank" rel="noopener noreferrer" class="how-card how-card--cta reveal reveal-delay-2">
           <div class="how-card-number">02</div>
           <div class="how-card-icon">📊</div>
-          <h3>Curadoria inteligente</h3>
-          <p>Só entra no site o que realmente é um bom negócio. Nada de anúncio inflado ou carro superfaturado.</p>
-        </div>
+          <h3>Curadoria sob encomenda</h3>
+          <p>Não achou o que queria nas ofertas? Me conta o carro ou moto, valor até quanto e o ano — eu corro atrás pra você.</p>
+          <span class="how-card-cta-link">Chamar no WhatsApp →</span>
+        </a>
         <div class="how-card reveal reveal-delay-3">
           <div class="how-card-number">03</div>
           <div class="how-card-icon">📱</div>
@@ -1272,7 +1270,6 @@
         const res = await fetch('carros.json');
         const carros = await res.json();
         TODOS_CARROS = carros;
-        renderizarMarquee(carros);
         montarHeroVisual(carros);
         renderizarAchadoDoDia(carros);
         inicializarFiltros(carros);
@@ -1384,6 +1381,10 @@
         cena.addEventListener('mouseleave', () => { fatorAlvo = 1; });
       }
 
+      // Plano orbital levemente inclinado (visto de cima): as fotos sobem por trás do sol
+      // e descem passando na frente dele — movimento de planeta de verdade, não só deslizar lateral
+      const ORBITA_INCLINACAO_RAD = 22 * Math.PI / 180;
+
       let ultimoTempo = performance.now();
       function animarOrbita(agora) {
         const dt = Math.min((agora - ultimoTempo) / 1000, 0.1);
@@ -1393,9 +1394,18 @@
 
         estadoOrbital.forEach(o => {
           o.angulo += o.velocidade * fatorVelocidade * dt;
-          o.el.style.transform = `rotateY(${o.angulo}deg) translateZ(${o.raio}px)`;
-          // Profundidade aproximada (1 = na frente do sol, -1 = atrás dele) pra apagar um pouco quando "eclipsada"
-          const profundidade = Math.cos(o.angulo * Math.PI / 180);
+          const rad = o.angulo * Math.PI / 180;
+          // Posição na órbita circular; a componente de profundidade também projeta o
+          // deslocamento vertical (é a inclinação do plano orbital que dá a elipse na tela)
+          const x = Math.cos(rad) * o.raio;
+          const zPlano = Math.sin(rad) * o.raio;
+          const y = zPlano * Math.sin(ORBITA_INCLINACAO_RAD);
+          const z = zPlano * Math.cos(ORBITA_INCLINACAO_RAD);
+          // Profundidade (1 = na frente do sol, -1 = atrás dele) pra apagar/encolher quando "eclipsada"
+          const profundidade = Math.sin(rad);
+          const escala = 0.72 + 0.38 * ((profundidade + 1) / 2);
+          o.el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) scale(${escala.toFixed(3)})`;
+          o.telaX = x; o.telaY = y; o.profundidade = profundidade;
           o.el.style.opacity = (0.65 + 0.35 * ((profundidade + 1) / 2)).toFixed(2);
           if (o.pendulo) {
             // O balanço do pêndulo continua mesmo com a órbita mais devagar — como se a "gravidade" nunca parasse
@@ -1414,9 +1424,11 @@
               `0 0 ${(luz * 34).toFixed(0)}px rgba(255,${(176 + luz * 45).toFixed(0)},${(70 + luz * 70).toFixed(0)},${(luz * 0.55).toFixed(2)})`;
           }
         });
-        // Espelha os ângulos atuais pro escopo do sol 3D, só pra sombrear os raios quando
-        // uma foto passa na frente do núcleo (mesma ideia do "pega sol" acima, reaproveitada)
-        anguloFotosOrbita = estadoOrbital.map(o => o.angulo);
+        // Espelha o ângulo NA TELA das fotos que estão na frente do sol, pro shader dos
+        // raios sombrear o setor onde o "planeta" está passando (atrás do sol não oclui)
+        anguloFotosOrbita = estadoOrbital
+          .filter(o => o.profundidade > 0.1)
+          .map(o => Math.atan2(-o.telaY, o.telaX) * 180 / Math.PI);
         requestAnimationFrame(animarOrbita);
       }
       requestAnimationFrame(animarOrbita);
@@ -1566,12 +1578,6 @@
         </div>
       `;
       el.hidden = false;
-    }
-
-    function renderizarMarquee(carros) {
-      if (!carros.length) return;
-      const itens = carros.map(c => `<span>${c.titulo} — R$ ${c.preco} <span class="sep">•</span></span>`);
-      document.getElementById('marquee').innerHTML = [...itens, ...itens].join('');
     }
 
     // Monta o HTML interno de .deal-card-image quando o anúncio tem mais de uma foto.
@@ -2231,8 +2237,11 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
       const scene = new THREE.Scene();
+      // O canvas é 240% do quadrado do hero (ver CSS .sol-canvas) pros raios vazarem pra
+      // página; a câmera afasta na mesma proporção pra esfera manter o mesmo tamanho na tela
+      const ESCALA_CANVAS_SOL = 2.4;
       const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-      camera.position.z = 4.4;
+      camera.position.z = 5.6 * ESCALA_CANVAS_SOL;
 
       solGroup = new THREE.Group();
       scene.add(solGroup);
@@ -2330,8 +2339,9 @@
             float cintilar = hash(floor(uTime * 6.0) + floor(angulo * 12.0)) * 0.15 + 0.85;
             raios *= cintilar;
 
-            // brilho cai do núcleo pra fora e some antes de chegar nas bordas do plano
-            float falloff = smoothstep(1.3, 0.35, raio);
+            // brilho cai do núcleo pra fora e zera ANTES da borda do plano/canvas —
+            // é isso que evita o corte quadrado nos raios
+            float falloff = smoothstep(0.98, 0.22, raio);
 
             // sombra leve no setor angular onde uma foto orbitando está passando na frente do sol
             float oclusao = 1.0;
@@ -2350,14 +2360,15 @@
         depthWrite: false,
         side: THREE.DoubleSide,
       });
-      const meshRaios = new THREE.Mesh(new THREE.PlaneGeometry(4.8, 4.8), materialRaios);
+      const meshRaios = new THREE.Mesh(new THREE.PlaneGeometry(10.2, 10.2), materialRaios);
       scene.add(meshRaios);
 
       function redimensionarSol3D() {
         const largura = globoCena.clientWidth || heroVisual.clientWidth;
         const altura = globoCena.clientHeight || heroVisual.clientHeight;
         if (!largura || !altura) return;
-        renderer.setSize(largura, altura, false);
+        // Buffer acompanha o tamanho real do canvas (240% do container), senão os raios saem borrados
+        renderer.setSize(Math.round(largura * ESCALA_CANVAS_SOL), Math.round(altura * ESCALA_CANVAS_SOL), false);
         camera.aspect = largura / altura;
         camera.updateProjectionMatrix();
       }
@@ -2386,7 +2397,8 @@
         const totalFotos = Math.min(anguloFotosOrbita.length, MAX_FOTOS_RAIOS);
         uniformsRaios.uNumFotos.value = totalFotos;
         for (let i = 0; i < totalFotos; i++) {
-          uniformsRaios.uAngulosFotos.value[i] = THREE.MathUtils.degToRad(anguloFotosOrbita[i] + rotYAtualSol * PARALLAX_FOTOS);
+          // anguloFotosOrbita agora já vem em ângulo de tela (calculado na órbita das fotos)
+          uniformsRaios.uAngulosFotos.value[i] = THREE.MathUtils.degToRad(anguloFotosOrbita[i]);
         }
 
         renderer.render(scene, camera);

@@ -3,7 +3,7 @@
     "id": 5,
     "titulo": "VOYAGE Comfortline 1.0 Flex",
     "marca": "Volskvagen",
-    "preco": "46.490",
+    "preco": "47.990",
     "ano": "2014/2015",
     "km": "97.919 km",
     "cambio": "",
@@ -33,7 +33,7 @@
     "id": 6,
     "titulo": "Hilux SRV CD 4x4 3.0 Diesel",
     "marca": "Toyota",
-    "preco": "115.490",
+    "preco": "116.990",
     "ano": "2010/2010",
     "km": "277.490 Km",
     "cambio": "",
@@ -62,7 +62,7 @@
     "id": 7,
     "titulo": "ARRIZO 1.5 Turbo RX",
     "marca": "arrizo",
-    "preco": "67.490",
+    "preco": "68.990",
     "ano": "2019/2020",
     "km": "101.441 KM",
     "cambio": "Automático CVT",
@@ -90,7 +90,7 @@
     "id": 8,
     "titulo": "Sentra SV 2.0 Flex",
     "marca": "Nissan",
-    "preco": "56.490",
+    "preco": "57.990",
     "ano": "2014/2015",
     "km": "151.498 KM",
     "cambio": "",
@@ -128,7 +128,7 @@
       "ram-2500-6-7-i6-laramie-9-01.webp"
     ],
     "fipePreco": "R$ 320.647,00",
-    "fipeDescontoPct": -4.8,
+    "fipeDescontoPct": -5.3,
     "fipeConfianca": "media"
   },
   {
@@ -149,7 +149,7 @@
       "mitsubishi-pajero-sport-2-4-mivec-hpe-s-awd-10-01.webp"
     ],
     "fipePreco": "R$ 293.130,00",
-    "fipeDescontoPct": -9.1,
+    "fipeDescontoPct": -9.6,
     "fipeConfianca": "alta"
   },
   {
@@ -170,7 +170,7 @@
       "toyota-hilux-sw4-2-8-srx-turbo-11-01.webp"
     ],
     "fipePreco": "R$ 196.543,00",
-    "fipeDescontoPct": -9.9,
+    "fipeDescontoPct": -10.7,
     "fipeConfianca": "alta"
   },
   {
@@ -191,7 +191,7 @@
       "ram-rampage-2-0-turbo-laramie-12-01.webp"
     ],
     "fipePreco": "R$ 192.521,00",
-    "fipeDescontoPct": -3.9,
+    "fipeDescontoPct": -4.7,
     "fipeConfianca": "media"
   },
   {
@@ -233,7 +233,7 @@
       "toyota-corolla-2-0-altis-14-01.webp"
     ],
     "fipePreco": "R$ 143.255,00",
-    "fipeDescontoPct": -7.5,
+    "fipeDescontoPct": -8.5,
     "fipeConfianca": "media"
   },
   {
@@ -254,7 +254,7 @@
       "volkswagen-taos-1-4-250-tsi-highline-15-01.webp"
     ],
     "fipePreco": "R$ 133.879,00",
-    "fipeDescontoPct": -12,
+    "fipeDescontoPct": -13.2,
     "fipeConfianca": "alta"
   },
   {
@@ -275,7 +275,7 @@
       "toyota-corolla-2-0-xei-16-01.webp"
     ],
     "fipePreco": "R$ 141.188,00",
-    "fipeDescontoPct": -3.4,
+    "fipeDescontoPct": -4.5,
     "fipeConfianca": "alta"
   },
   {
@@ -296,7 +296,7 @@
       "chevrolet-s10-2-5-ltz-16v-17-01.webp"
     ],
     "fipePreco": "R$ 134.643,00",
-    "fipeDescontoPct": -7.7,
+    "fipeDescontoPct": -8.8,
     "fipeConfianca": "media"
   },
   {
@@ -317,7 +317,7 @@
       "toyota-corolla-1-8-altis-premium-hybrid-18-01.webp"
     ],
     "fipePreco": "R$ 121.671,00",
-    "fipeDescontoPct": -14.2,
+    "fipeDescontoPct": -15.5,
     "fipeConfianca": "media"
   },
   {
@@ -338,7 +338,7 @@
       "toyota-corolla-2-0-xei-19-01.webp"
     ],
     "fipePreco": "R$ 122.084,00",
-    "fipeDescontoPct": -10.6,
+    "fipeDescontoPct": -11.8,
     "fipeConfianca": "alta"
   },
   {
@@ -359,7 +359,7 @@
       "toyota-corolla-2-0-xei-20-01.webp"
     ],
     "fipePreco": "R$ 127.417,00",
-    "fipeDescontoPct": -3.6,
+    "fipeDescontoPct": -4.8,
     "fipeConfianca": "alta"
   },
   {
@@ -380,7 +380,7 @@
       "volkswagen-nivus-1-0-200-tsi-highline-21-01.webp"
     ],
     "fipePreco": "R$ 116.893,00",
-    "fipeDescontoPct": -8.6,
+    "fipeDescontoPct": -9.9,
     "fipeConfianca": "alta"
   },
   {
@@ -422,7 +422,7 @@
       "toyota-corolla-2-0-gli-23-01.webp"
     ],
     "fipePreco": "R$ 113.760,00",
-    "fipeDescontoPct": -5.5,
+    "fipeDescontoPct": -6.8,
     "fipeConfianca": "alta"
   },
   {
@@ -443,7 +443,7 @@
       "fiat-toro-1-3-turbo-270-volcano-24-01.webp"
     ],
     "fipePreco": "R$ 117.362,00",
-    "fipeDescontoPct": -2.2,
+    "fipeDescontoPct": -3.5,
     "fipeConfianca": "media"
   },
   {
@@ -464,7 +464,7 @@
       "fiat-toro-2-0-16v-ultra-4wd-25-01.webp"
     ],
     "fipePreco": "R$ 118.375,00",
-    "fipeDescontoPct": 1.2,
+    "fipeDescontoPct": -0.1,
     "fipeConfianca": "alta"
   },
   {
@@ -485,7 +485,7 @@
       "toyota-yaris-1-5-xls-multidrive-26-01.webp"
     ],
     "fipePreco": "R$ 95.202,00",
-    "fipeDescontoPct": -17.6,
+    "fipeDescontoPct": -19.2,
     "fipeConfianca": "media"
   },
   {
@@ -506,7 +506,7 @@
       "volkswagen-nivus-1-0-200-tsi-comfortline-27-01.webp"
     ],
     "fipePreco": "R$ 95.283,00",
-    "fipeDescontoPct": -11.2,
+    "fipeDescontoPct": -12.8,
     "fipeConfianca": "alta"
   },
   {
@@ -527,7 +527,7 @@
       "fiat-toro-1-3-turbo-270-freedom-28-01.webp"
     ],
     "fipePreco": "R$ 105.125,00",
-    "fipeDescontoPct": 0.1,
+    "fipeDescontoPct": -1.3,
     "fipeConfianca": "media"
   },
   {
@@ -548,7 +548,7 @@
       "toyota-corolla-2-0-xei-29-01.webp"
     ],
     "fipePreco": "R$ 99.201,00",
-    "fipeDescontoPct": -3.8,
+    "fipeDescontoPct": -5.3,
     "fipeConfianca": "alta"
   },
   {
@@ -569,7 +569,7 @@
       "fiat-toro-1-8-endurance-at6-30-01.webp"
     ],
     "fipePreco": "R$ 91.475,00",
-    "fipeDescontoPct": -10.4,
+    "fipeDescontoPct": -12,
     "fipeConfianca": "alta"
   },
   {
@@ -590,7 +590,7 @@
       "nissan-versa-1-6-16v-exclusive-31-01.webp"
     ],
     "fipePreco": "R$ 103.555,00",
-    "fipeDescontoPct": 3.4,
+    "fipeDescontoPct": 2,
     "fipeConfianca": "alta"
   },
   {
@@ -611,7 +611,7 @@
       "jeep-renegade-2-0-longitude-turbo-32-01.webp"
     ],
     "fipePreco": "R$ 93.251,00",
-    "fipeDescontoPct": -4,
+    "fipeDescontoPct": -5.6,
     "fipeConfianca": "media"
   },
   {
@@ -632,7 +632,7 @@
       "toyota-corolla-1-8-gli-33-01.webp"
     ],
     "fipePreco": "R$ 81.117,00",
-    "fipeDescontoPct": -13.4,
+    "fipeDescontoPct": -15.3,
     "fipeConfianca": "alta"
   },
   {
@@ -653,7 +653,7 @@
       "toyota-yaris-1-5-xls-connect-34-01.webp"
     ],
     "fipePreco": "R$ 83.256,00",
-    "fipeDescontoPct": -8.1,
+    "fipeDescontoPct": -9.9,
     "fipeConfianca": "alta"
   },
   {
@@ -674,7 +674,7 @@
       "fiat-toro-1-8-freedom-16v-35-01.webp"
     ],
     "fipePreco": "R$ 81.985,00",
-    "fipeDescontoPct": -4.9,
+    "fipeDescontoPct": -6.7,
     "fipeConfianca": "alta"
   },
   {
@@ -695,7 +695,7 @@
       "renault-duster-1-6-16v-sce-intense-36-01.webp"
     ],
     "fipePreco": "R$ 82.259,00",
-    "fipeDescontoPct": 0.3,
+    "fipeDescontoPct": -1.5,
     "fipeConfianca": "alta"
   },
   {
@@ -716,7 +716,7 @@
       "renault-duster-1-6-16v-sce-zen-37-01.webp"
     ],
     "fipePreco": "R$ 84.854,00",
-    "fipeDescontoPct": 5.7,
+    "fipeDescontoPct": 4,
     "fipeConfianca": "alta"
   },
   {
@@ -737,7 +737,7 @@
       "volkswagen-polo-hatch-1-0-200-tsi-comfortline-38-01.webp"
     ],
     "fipePreco": "R$ 69.854,00",
-    "fipeDescontoPct": -0.2,
+    "fipeDescontoPct": -2.3,
     "fipeConfianca": "alta"
   },
   {
@@ -758,7 +758,7 @@
       "renault-duster-2-0-dynamique-39-01.webp"
     ],
     "fipePreco": "R$ 63.712,00",
-    "fipeDescontoPct": -8.1,
+    "fipeDescontoPct": -10.5,
     "fipeConfianca": "alta"
   },
   {
@@ -779,7 +779,7 @@
       "fiat-strada-cs-1-4-endurance-40-01.webp"
     ],
     "fipePreco": "R$ 74.801,00",
-    "fipeDescontoPct": 10.4,
+    "fipeDescontoPct": 8.4,
     "fipeConfianca": "alta"
   },
   {
@@ -800,7 +800,7 @@
       "chevrolet-onix-1-0-lt-turbo-41-01.webp"
     ],
     "fipePreco": "R$ 91.618,00",
-    "fipeDescontoPct": 32.3,
+    "fipeDescontoPct": 30.7,
     "fipeConfianca": "media"
   },
   {
@@ -821,28 +821,7 @@
       "nissan-versa-1-6-unique-42-01.webp"
     ],
     "fipePreco": "R$ 49.864,00",
-    "fipeDescontoPct": -18.3,
-    "fipeConfianca": "alta"
-  },
-  {
-    "id": 43,
-    "titulo": "Chevrolet Prisma 1.0 JOY 8V",
-    "marca": "Chevrolet",
-    "preco": "58.490",
-    "ano": "2019/2019",
-    "km": "90.820 km",
-    "cambio": "Manual",
-    "combustivel": "Á/G",
-    "loja": "RH Motors",
-    "aceitaTroca": false,
-    "destaque": null,
-    "emoji": "🚗",
-    "plataformas": [],
-    "fotos": [
-      "chevrolet-prisma-1-0-joy-8v-43-01.webp"
-    ],
-    "fipePreco": "R$ 46.883,00",
-    "fipeDescontoPct": -21.6,
+    "fipeDescontoPct": -21.3,
     "fipeConfianca": "alta"
   },
   {
@@ -905,7 +884,7 @@
       "chevrolet-spin-1-8-premier-46-01.webp"
     ],
     "fipePreco": "R$ 123.314,00",
-    "fipeDescontoPct": -7.8,
+    "fipeDescontoPct": -9.1,
     "fipeConfianca": "media"
   },
   {
@@ -926,7 +905,7 @@
       "toyota-corolla-cross-2-0-xre-direct-shift-47-01.webp"
     ],
     "fipePreco": "R$ 148.376,00",
-    "fipeDescontoPct": -4.5,
+    "fipeDescontoPct": -5.5,
     "fipeConfianca": "alta"
   },
   {
@@ -947,7 +926,7 @@
       "chevrolet-tracker-1-2-premier-turbo-48-01.webp"
     ],
     "fipePreco": "R$ 117.502,00",
-    "fipeDescontoPct": -12.3,
+    "fipeDescontoPct": -13.6,
     "fipeConfianca": "alta"
   },
   {
@@ -968,7 +947,7 @@
       "toyota-corolla-1-8-altis-premium-hybrid-49-01.webp"
     ],
     "fipePreco": "R$ 125.486,00",
-    "fipeDescontoPct": -2,
+    "fipeDescontoPct": -3.2,
     "fipeConfianca": "media"
   },
   {
@@ -1010,29 +989,8 @@
       "bmw-x3-2-0-hibrido-x-line-xdrive30e-51-01.webp"
     ],
     "fipePreco": "R$ 235.089,00",
-    "fipeDescontoPct": -14.8,
+    "fipeDescontoPct": -15.5,
     "fipeConfianca": "media"
-  },
-  {
-    "id": 52,
-    "titulo": "Volkswagen Jetta 2.0 350 TSI GLI DSG",
-    "marca": "Volkswagen",
-    "preco": "176.490",
-    "ano": "2019/2019",
-    "km": "85.600 km",
-    "cambio": "Automático",
-    "combustivel": "Á/G",
-    "loja": "RH Motors",
-    "aceitaTroca": false,
-    "destaque": null,
-    "emoji": "🚗",
-    "plataformas": [],
-    "fotos": [
-      "volkswagen-jetta-2-0-350-tsi-gli-dsg-52-01.webp"
-    ],
-    "fipePreco": "R$ 147.191,00",
-    "fipeDescontoPct": -18.9,
-    "fipeConfianca": "alta"
   },
   {
     "id": 53,
@@ -1052,7 +1010,7 @@
       "toyota-corolla-cross-2-0-gr-sport-53-01.webp"
     ],
     "fipePreco": "R$ 137.765,00",
-    "fipeDescontoPct": -19.8,
+    "fipeDescontoPct": -20.9,
     "fipeConfianca": "alta"
   },
   {
@@ -1073,7 +1031,7 @@
       "toyota-corolla-1-8-altis-hybrid-54-01.webp"
     ],
     "fipePreco": "R$ 141.176,00",
-    "fipeDescontoPct": -6.2,
+    "fipeDescontoPct": -7.3,
     "fipeConfianca": "alta"
   },
   {
@@ -1094,7 +1052,7 @@
       "toyota-corolla-1-8-altis-premium-hybrid-55-01.webp"
     ],
     "fipePreco": "R$ 131.907,00",
-    "fipeDescontoPct": -13,
+    "fipeDescontoPct": -14.1,
     "fipeConfianca": "media"
   },
   {
@@ -1136,7 +1094,7 @@
       "toyota-corolla-2-0-altis-57-01.webp"
     ],
     "fipePreco": "R$ 143.255,00",
-    "fipeDescontoPct": -2.6,
+    "fipeDescontoPct": -3.7,
     "fipeConfianca": "media"
   },
   {
@@ -1157,7 +1115,7 @@
       "chevrolet-tracker-1-2-premier-turbo-58-01.webp"
     ],
     "fipePreco": "R$ 107.589,00",
-    "fipeDescontoPct": -19.9,
+    "fipeDescontoPct": -21.3,
     "fipeConfianca": "alta"
   },
   {
@@ -1178,7 +1136,7 @@
       "volkswagen-nivus-1-0-200-tsi-highline-59-01.webp"
     ],
     "fipePreco": "R$ 102.389,00",
-    "fipeDescontoPct": -14.3,
+    "fipeDescontoPct": -15.7,
     "fipeConfianca": "alta"
   },
   {
@@ -1199,7 +1157,7 @@
       "chery-tiggo-5x-1-5-vvt-turbo-t-dct-60-01.webp"
     ],
     "fipePreco": "R$ 95.911,00",
-    "fipeDescontoPct": -5.3,
+    "fipeDescontoPct": -6.9,
     "fipeConfianca": "alta"
   },
   {
@@ -1220,7 +1178,7 @@
       "chevrolet-spin-1-8-premier-61-01.webp"
     ],
     "fipePreco": "R$ 79.387,00",
-    "fipeDescontoPct": -7.1,
+    "fipeDescontoPct": -8.9,
     "fipeConfianca": "media"
   },
   {
@@ -1304,7 +1262,7 @@
       "toyota-hilux-2-8-srx-65-01.webp"
     ],
     "fipePreco": "R$ 236.430,00",
-    "fipeDescontoPct": -5.7,
+    "fipeDescontoPct": -6.4,
     "fipeConfianca": "media"
   },
   {
@@ -1346,7 +1304,7 @@
       "toyota-hilux-2-8-srv-67-01.webp"
     ],
     "fipePreco": "R$ 215.848,00",
-    "fipeDescontoPct": 0.9,
+    "fipeDescontoPct": 0.2,
     "fipeConfianca": "media"
   },
   {
@@ -1367,7 +1325,7 @@
       "mitsubishi-l200-triton-2-4-outdoor-hpe-s-68-01.webp"
     ],
     "fipePreco": "R$ 148.768,00",
-    "fipeDescontoPct": -35.1,
+    "fipeDescontoPct": -36.1,
     "fipeConfianca": "alta"
   },
   {
@@ -1388,7 +1346,7 @@
       "toyota-hilux-2-8-srv-69-01.webp"
     ],
     "fipePreco": "R$ 170.238,00",
-    "fipeDescontoPct": -4.6,
+    "fipeDescontoPct": -5.4,
     "fipeConfianca": "media"
   },
   {
@@ -1430,7 +1388,7 @@
       "fiat-toro-2-0-16v-turbo-ranch-4wd-71-01.webp"
     ],
     "fipePreco": "R$ 138.683,00",
-    "fipeDescontoPct": -5.3,
+    "fipeDescontoPct": -6.4,
     "fipeConfianca": "alta"
   },
   {
@@ -1451,7 +1409,7 @@
       "honda-hr-v-1-5-di-i-vtec-exl-72-01.webp"
     ],
     "fipePreco": "R$ 136.394,00",
-    "fipeDescontoPct": -6.3,
+    "fipeDescontoPct": -7.4,
     "fipeConfianca": "media"
   },
   {
@@ -1472,7 +1430,7 @@
       "jeep-compass-1-3-t270-longitude-73-01.webp"
     ],
     "fipePreco": "R$ 158.778,00",
-    "fipeDescontoPct": 8.7,
+    "fipeDescontoPct": 7.7,
     "fipeConfianca": "media"
   },
   {
@@ -1493,7 +1451,7 @@
       "honda-hr-v-1-5-di-i-vtec-exl-74-01.webp"
     ],
     "fipePreco": "R$ 136.394,00",
-    "fipeDescontoPct": -6.3,
+    "fipeDescontoPct": -7.4,
     "fipeConfianca": "media"
   },
   {
@@ -1535,7 +1493,7 @@
       "jeep-compass-2-0-td350-longitude-76-01.webp"
     ],
     "fipePreco": "R$ 102.560,00",
-    "fipeDescontoPct": -34.5,
+    "fipeDescontoPct": -36,
     "fipeConfianca": "media"
   },
   {
@@ -1556,7 +1514,7 @@
       "honda-city-1-5-touring-77-01.webp"
     ],
     "fipePreco": "R$ 121.472,00",
-    "fipeDescontoPct": -5.4,
+    "fipeDescontoPct": -6.6,
     "fipeConfianca": "alta"
   },
   {
@@ -1577,7 +1535,7 @@
       "ford-ranger-2-2-xls-78-01.webp"
     ],
     "fipePreco": "R$ 125.487,00",
-    "fipeDescontoPct": -0.4,
+    "fipeDescontoPct": -1.6,
     "fipeConfianca": "alta"
   },
   {
@@ -1598,7 +1556,7 @@
       "jeep-compass-1-3-t270-longitude-79-01.webp"
     ],
     "fipePreco": "R$ 146.979,00",
-    "fipeDescontoPct": 17.1,
+    "fipeDescontoPct": 16,
     "fipeConfianca": "media"
   },
   {
@@ -1619,7 +1577,7 @@
       "volkswagen-nivus-1-0-200-tsi-highline-80-01.webp"
     ],
     "fipePreco": "R$ 112.353,00",
-    "fipeDescontoPct": -7.7,
+    "fipeDescontoPct": -9,
     "fipeConfianca": "alta"
   },
   {
@@ -1640,7 +1598,7 @@
       "fiat-toro-1-3-turbo-270-freedom-81-01.webp"
     ],
     "fipePreco": "R$ 123.834,00",
-    "fipeDescontoPct": 3.1,
+    "fipeDescontoPct": 1.9,
     "fipeConfianca": "media"
   },
   {
@@ -1661,7 +1619,7 @@
       "chevrolet-tracker-1-0-ltz-turbo-82-01.webp"
     ],
     "fipePreco": "R$ 92.045,00",
-    "fipeDescontoPct": -26,
+    "fipeDescontoPct": -27.6,
     "fipeConfianca": "alta"
   },
   {
@@ -1682,7 +1640,7 @@
       "nissan-kicks-1-6-advance-plus-83-01.webp"
     ],
     "fipePreco": "R$ 121.010,00",
-    "fipeDescontoPct": 5,
+    "fipeDescontoPct": 3.7,
     "fipeConfianca": "alta"
   },
   {
@@ -1703,7 +1661,7 @@
       "toyota-corolla-2-0-gli-84-01.webp"
     ],
     "fipePreco": "R$ 107.127,00",
-    "fipeDescontoPct": -5.5,
+    "fipeDescontoPct": -6.9,
     "fipeConfianca": "alta"
   },
   {
@@ -1724,7 +1682,7 @@
       "jeep-renegade-1-3-t270-turbo-sport-85-01.webp"
     ],
     "fipePreco": "R$ 99.345,00",
-    "fipeDescontoPct": -11.7,
+    "fipeDescontoPct": -13.2,
     "fipeConfianca": "alta"
   },
   {
@@ -1745,7 +1703,7 @@
       "chery-tiggo-7-1-5-vvt-turbo-t-dct-86-01.webp"
     ],
     "fipePreco": "R$ 112.010,00",
-    "fipeDescontoPct": 8.1,
+    "fipeDescontoPct": 6.7,
     "fipeConfianca": "alta"
   },
   {
@@ -1766,7 +1724,7 @@
       "chevrolet-cruze-1-4-turbo-sport6-ltz-16v-87-01.webp"
     ],
     "fipePreco": "R$ 91.730,00",
-    "fipeDescontoPct": -10.1,
+    "fipeDescontoPct": -11.7,
     "fipeConfianca": "alta"
   },
   {
@@ -1787,7 +1745,7 @@
       "honda-hr-v-1-8-exl-88-01.webp"
     ],
     "fipePreco": "R$ 92.392,00",
-    "fipeDescontoPct": -7.1,
+    "fipeDescontoPct": -8.8,
     "fipeConfianca": "alta"
   },
   {
@@ -1808,7 +1766,7 @@
       "jeep-renegade-1-8-longitude-89-01.webp"
     ],
     "fipePreco": "R$ 82.129,00",
-    "fipeDescontoPct": -15.7,
+    "fipeDescontoPct": -17.5,
     "fipeConfianca": "alta"
   },
   {
@@ -1829,7 +1787,7 @@
       "toyota-corolla-1-8-gli-upper-90-01.webp"
     ],
     "fipePreco": "R$ 89.170,00",
-    "fipeDescontoPct": -6.5,
+    "fipeDescontoPct": -8.2,
     "fipeConfianca": "alta"
   },
   {
@@ -1850,7 +1808,7 @@
       "chevrolet-onix-1-0-91-01.webp"
     ],
     "fipePreco": "R$ 67.042,00",
-    "fipeDescontoPct": -37.2,
+    "fipeDescontoPct": -39.5,
     "fipeConfianca": "media"
   },
   {
@@ -1871,7 +1829,7 @@
       "toyota-yaris-1-5-xl-multidrive-92-01.webp"
     ],
     "fipePreco": "R$ 83.848,00",
-    "fipeDescontoPct": -9.7,
+    "fipeDescontoPct": -11.5,
     "fipeConfianca": "media"
   },
   {
@@ -1892,7 +1850,7 @@
       "hyundai-ix35-2-0-gl-93-01.webp"
     ],
     "fipePreco": "R$ 84.875,00",
-    "fipeDescontoPct": -6,
+    "fipeDescontoPct": -7.8,
     "fipeConfianca": "alta"
   },
   {
@@ -1913,7 +1871,7 @@
       "toyota-yaris-1-5-xl-plus-connect-94-01.webp"
     ],
     "fipePreco": "R$ 81.724,00",
-    "fipeDescontoPct": -10.1,
+    "fipeDescontoPct": -11.9,
     "fipeConfianca": "alta"
   },
   {
@@ -1934,7 +1892,7 @@
       "toyota-corolla-1-8-gli-upper-95-01.webp"
     ],
     "fipePreco": "R$ 86.218,00",
-    "fipeDescontoPct": -0.9,
+    "fipeDescontoPct": -2.6,
     "fipeConfianca": "alta"
   },
   {
@@ -1955,7 +1913,7 @@
       "chevrolet-onix-1-0-premier-turbo-96-01.webp"
     ],
     "fipePreco": "R$ 103.260,00",
-    "fipeDescontoPct": 17.7,
+    "fipeDescontoPct": 16.2,
     "fipeConfianca": "media"
   },
   {
@@ -1976,7 +1934,7 @@
       "nissan-kicks-1-6-s-97-01.webp"
     ],
     "fipePreco": "R$ 76.594,00",
-    "fipeDescontoPct": -9.7,
+    "fipeDescontoPct": -11.6,
     "fipeConfianca": "alta"
   },
   {
@@ -1997,7 +1955,7 @@
       "toyota-yaris-1-5-xls-multidrive-98-01.webp"
     ],
     "fipePreco": "R$ 79.207,00",
-    "fipeDescontoPct": -6,
+    "fipeDescontoPct": -7.9,
     "fipeConfianca": "media"
   },
   {
@@ -2018,7 +1976,7 @@
       "volkswagen-polo-hatch-1-0-200-tsi-comfortline-99-01.webp"
     ],
     "fipePreco": "R$ 71.816,00",
-    "fipeDescontoPct": -15.6,
+    "fipeDescontoPct": -17.6,
     "fipeConfianca": "alta"
   },
   {
@@ -2039,7 +1997,7 @@
       "volkswagen-polo-hatch-1-0-200-tsi-comfortline-100-01.webp"
     ],
     "fipePreco": "R$ 95.283,00",
-    "fipeDescontoPct": 15.1,
+    "fipeDescontoPct": 13.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2060,7 +2018,7 @@
       "renault-duster-oroch-1-6-dynamique-101-01.webp"
     ],
     "fipePreco": "R$ 67.652,00",
-    "fipeDescontoPct": -18.2,
+    "fipeDescontoPct": -20.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2081,7 +2039,7 @@
       "volkswagen-virtus-1-6-msi-102-01.webp"
     ],
     "fipePreco": "R$ 83.720,00",
-    "fipeDescontoPct": 4.5,
+    "fipeDescontoPct": 2.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2102,7 +2060,7 @@
       "renault-duster-oroch-1-6-express-103-01.webp"
     ],
     "fipePreco": "R$ 70.647,00",
-    "fipeDescontoPct": -6.1,
+    "fipeDescontoPct": -8.3,
     "fipeConfianca": "alta"
   },
   {
@@ -2123,29 +2081,8 @@
       "chevrolet-onix-1-0-premier-turbo-104-01.webp"
     ],
     "fipePreco": "R$ 93.253,00",
-    "fipeDescontoPct": 19.6,
+    "fipeDescontoPct": 18,
     "fipeConfianca": "media"
-  },
-  {
-    "id": 105,
-    "titulo": "Chevrolet Prisma 1.4 LTZ 8V",
-    "marca": "Chevrolet",
-    "preco": "66.490",
-    "ano": "2017/2018",
-    "km": "95.353 km",
-    "cambio": "Automático",
-    "combustivel": "Á/G",
-    "loja": "RH Motors",
-    "aceitaTroca": false,
-    "destaque": null,
-    "emoji": "🚗",
-    "plataformas": [],
-    "fotos": [
-      "chevrolet-prisma-1-4-ltz-8v-105-01.webp"
-    ],
-    "fipePreco": "R$ 61.063,00",
-    "fipeDescontoPct": -6.4,
-    "fipeConfianca": "alta"
   },
   {
     "id": 106,
@@ -2165,7 +2102,7 @@
       "renault-duster-1-6-dynamique-106-01.webp"
     ],
     "fipePreco": "R$ 67.652,00",
-    "fipeDescontoPct": 3.9,
+    "fipeDescontoPct": 1.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2186,7 +2123,7 @@
       "chevrolet-prisma-1-4-lt-8v-107-01.webp"
     ],
     "fipePreco": "R$ 57.464,00",
-    "fipeDescontoPct": -11.4,
+    "fipeDescontoPct": -14,
     "fipeConfianca": "alta"
   },
   {
@@ -2207,7 +2144,7 @@
       "renault-sandero-2-0-rs-108-01.webp"
     ],
     "fipePreco": "R$ 53.832,00",
-    "fipeDescontoPct": -7.7,
+    "fipeDescontoPct": -10.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2228,7 +2165,7 @@
       "chevrolet-cruze-1-8-lt-16v-109-01.webp"
     ],
     "fipePreco": "R$ 57.101,00",
-    "fipeDescontoPct": 0.2,
+    "fipeDescontoPct": -2.4,
     "fipeConfianca": "alta"
   },
   {
@@ -2249,7 +2186,7 @@
       "chevrolet-onix-1-0-joy-8v-110-01.webp"
     ],
     "fipePreco": "R$ 50.147,00",
-    "fipeDescontoPct": 2.5,
+    "fipeDescontoPct": -0.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2270,7 +2207,7 @@
       "chevrolet-onix-1-4-ltz-8v-111-01.webp"
     ],
     "fipePreco": "R$ 52.030,00",
-    "fipeDescontoPct": 11.6,
+    "fipeDescontoPct": 8.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2291,7 +2228,7 @@
       "toyota-hilux-sw4-2-8-srx-turbo-112-01.webp"
     ],
     "fipePreco": "R$ 237.803,00",
-    "fipeDescontoPct": -3.9,
+    "fipeDescontoPct": -4.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2354,7 +2291,7 @@
       "toyota-corolla-cross-2-0-xre-direct-shift-115-01.webp"
     ],
     "fipePreco": "R$ 163.887,00",
-    "fipeDescontoPct": -6.8,
+    "fipeDescontoPct": -7.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2375,7 +2312,7 @@
       "chevrolet-montana-1-2-turbo-lt-116-01.webp"
     ],
     "fipePreco": "R$ 100.185,00",
-    "fipeDescontoPct": 0.2,
+    "fipeDescontoPct": -1.3,
     "fipeConfianca": "alta"
   },
   {
@@ -2396,7 +2333,7 @@
       "hyundai-ix35-2-0-16v-117-01.webp"
     ],
     "fipePreco": "R$ 86.193,00",
-    "fipeDescontoPct": -14.8,
+    "fipeDescontoPct": -16.6,
     "fipeConfianca": "alta"
   },
   {
@@ -2438,7 +2375,7 @@
       "nissan-kicks-1-6-s-119-01.webp"
     ],
     "fipePreco": "R$ 76.594,00",
-    "fipeDescontoPct": -0.5,
+    "fipeDescontoPct": -2.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2459,7 +2396,7 @@
       "volkswagen-virtus-1-6-msi-120-01.webp"
     ],
     "fipePreco": "R$ 74.518,00",
-    "fipeDescontoPct": -3.3,
+    "fipeDescontoPct": -5.3,
     "fipeConfianca": "alta"
   },
   {
@@ -2480,7 +2417,7 @@
       "fiat-strada-cd-1-4-working-121-01.webp"
     ],
     "fipePreco": "R$ 59.352,00",
-    "fipeDescontoPct": -16.2,
+    "fipeDescontoPct": -18.8,
     "fipeConfianca": "alta"
   },
   {
@@ -2501,7 +2438,7 @@
       "hyundai-hb20-1-0-comfort-122-01.webp"
     ],
     "fipePreco": "R$ 64.316,00",
-    "fipeDescontoPct": -4.2,
+    "fipeDescontoPct": -6.5,
     "fipeConfianca": "alta"
   },
   {
@@ -2522,7 +2459,7 @@
       "chevrolet-onix-1-0-123-01.webp"
     ],
     "fipePreco": "R$ 53.992,00",
-    "fipeDescontoPct": -20.4,
+    "fipeDescontoPct": -23.1,
     "fipeConfianca": "media"
   },
   {
@@ -2543,7 +2480,7 @@
       "volkswagen-voyage-1-6-124-01.webp"
     ],
     "fipePreco": "R$ 59.934,00",
-    "fipeDescontoPct": -6.8,
+    "fipeDescontoPct": -9.3,
     "fipeConfianca": "media"
   },
   {
@@ -2564,7 +2501,7 @@
       "chevrolet-onix-1-4-lt-8v-125-01.webp"
     ],
     "fipePreco": "R$ 51.206,00",
-    "fipeDescontoPct": 12.1,
+    "fipeDescontoPct": 9.2,
     "fipeConfianca": "alta"
   },
   {
@@ -2585,7 +2522,7 @@
       "renault-duster-1-6-expression-126-01.webp"
     ],
     "fipePreco": "R$ 52.690,00",
-    "fipeDescontoPct": -12,
+    "fipeDescontoPct": -14.8,
     "fipeConfianca": "alta"
   },
   {
@@ -2627,7 +2564,7 @@
       "volkswagen-virtus-1-0-200-tsi-highline-128-01.webp"
     ],
     "fipePreco": "R$ 119.576,00",
-    "fipeDescontoPct": -5.4,
+    "fipeDescontoPct": -6.6,
     "fipeConfianca": "alta"
   },
   {
@@ -2648,7 +2585,7 @@
       "honda-hr-v-1-8-ex-129-01.webp"
     ],
     "fipePreco": "R$ 104.464,00",
-    "fipeDescontoPct": 0.5,
+    "fipeDescontoPct": -1,
     "fipeConfianca": "alta"
   },
   {
@@ -2669,7 +2606,7 @@
       "renault-duster-1-6-16v-sce-intense-130-01.webp"
     ],
     "fipePreco": "R$ 93.073,00",
-    "fipeDescontoPct": -3.1,
+    "fipeDescontoPct": -4.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2690,7 +2627,7 @@
       "toyota-yaris-1-5-xl-plus-connect-131-01.webp"
     ],
     "fipePreco": "R$ 83.768,00",
-    "fipeDescontoPct": -8.6,
+    "fipeDescontoPct": -10.4,
     "fipeConfianca": "alta"
   },
   {
@@ -2711,7 +2648,7 @@
       "volkswagen-virtus-1-0-200-tsi-comfortline-132-01.webp"
     ],
     "fipePreco": "R$ 95.283,00",
-    "fipeDescontoPct": 10.8,
+    "fipeDescontoPct": 9.2,
     "fipeConfianca": "alta"
   },
   {
@@ -2732,7 +2669,7 @@
       "fiat-strada-cd-1-4-endurance-133-01.webp"
     ],
     "fipePreco": "R$ 71.701,00",
-    "fipeDescontoPct": -10.2,
+    "fipeDescontoPct": -12.3,
     "fipeConfianca": "alta"
   },
   {
@@ -2753,7 +2690,7 @@
       "fiat-strada-cd-1-4-working-134-01.webp"
     ],
     "fipePreco": "R$ 60.836,00",
-    "fipeDescontoPct": -13.4,
+    "fipeDescontoPct": -15.9,
     "fipeConfianca": "alta"
   },
   {
@@ -2795,7 +2732,7 @@
       "volkswagen-gol-1-0-track-136-01.webp"
     ],
     "fipePreco": "R$ 38.424,00",
-    "fipeDescontoPct": -11.9,
+    "fipeDescontoPct": -15.8,
     "fipeConfianca": "media"
   },
   {
@@ -2816,7 +2753,7 @@
       "honda-hr-v-1-5-di-i-vtec-turbo-advance-137-01.webp"
     ],
     "fipePreco": "R$ 158.639,00",
-    "fipeDescontoPct": -2.1,
+    "fipeDescontoPct": -3.1,
     "fipeConfianca": "media"
   },
   {
@@ -2858,7 +2795,7 @@
       "fiat-argo-1-0-drive-139-01.webp"
     ],
     "fipePreco": "R$ 64.774,00",
-    "fipeDescontoPct": -3.4,
+    "fipeDescontoPct": -5.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2879,7 +2816,7 @@
       "toyota-corolla-2-0-xei-140-01.webp"
     ],
     "fipePreco": "R$ 66.246,00",
-    "fipeDescontoPct": 0.5,
+    "fipeDescontoPct": -1.7,
     "fipeConfianca": "alta"
   },
   {
@@ -2900,7 +2837,7 @@
       "volkswagen-t-cross-1-4-250-tsi-highline-141-01.webp"
     ],
     "fipePreco": "R$ 108.474,00",
-    "fipeDescontoPct": -0.5,
+    "fipeDescontoPct": -1.9,
     "fipeConfianca": "alta"
   },
   {
@@ -2942,7 +2879,7 @@
       "chevrolet-spin-1-8-activ7-143-01.webp"
     ],
     "fipePreco": "R$ 72.440,00",
-    "fipeDescontoPct": -13.2,
+    "fipeDescontoPct": -15.3,
     "fipeConfianca": "media"
   },
   {
@@ -2963,7 +2900,7 @@
       "renault-duster-1-6-16v-sce-zen-144-01.webp"
     ],
     "fipePreco": "R$ 76.410,00",
-    "fipeDescontoPct": 8.4,
+    "fipeDescontoPct": 6.4,
     "fipeConfianca": "alta"
   },
   {
@@ -2984,7 +2921,7 @@
       "chevrolet-onix-1-0-lt-8v-145-01.webp"
     ],
     "fipePreco": "R$ 41.303,00",
-    "fipeDescontoPct": -8.9,
+    "fipeDescontoPct": -12.6,
     "fipeConfianca": "alta"
   },
   {
@@ -3005,7 +2942,7 @@
       "ram-classic-5-7-v8-laramie-146-01.webp"
     ],
     "fipePreco": "R$ 247.761,00",
-    "fipeDescontoPct": -0.9,
+    "fipeDescontoPct": -1.5,
     "fipeConfianca": "alta"
   },
   {
@@ -3026,7 +2963,7 @@
       "renault-stepway-1-6-16v-sce-zen-147-01.webp"
     ],
     "fipePreco": "R$ 72.744,00",
-    "fipeDescontoPct": -15.5,
+    "fipeDescontoPct": -17.5,
     "fipeConfianca": "alta"
   },
   {
@@ -3045,7 +2982,7 @@
     "plataformas": [],
     "fotos": [],
     "fipePreco": "R$ 158.671,00",
-    "fipeDescontoPct": -4.6,
+    "fipeDescontoPct": -5.6,
     "fipeConfianca": "alta"
   },
   {
@@ -3064,7 +3001,7 @@
     "plataformas": [],
     "fotos": [],
     "fipePreco": "R$ 116.893,00",
-    "fipeDescontoPct": -6.1,
+    "fipeDescontoPct": -7.4,
     "fipeConfianca": "alta"
   },
   {
@@ -3083,7 +3020,7 @@
     "plataformas": [],
     "fotos": [],
     "fipePreco": "R$ 94.773,00",
-    "fipeDescontoPct": -7.6,
+    "fipeDescontoPct": -9.2,
     "fipeConfianca": "alta"
   },
   {
@@ -3102,7 +3039,7 @@
     "plataformas": [],
     "fotos": [],
     "fipePreco": "R$ 80.299,00",
-    "fipeDescontoPct": -7.1,
+    "fipeDescontoPct": -9,
     "fipeConfianca": "alta"
   },
   {
@@ -3163,7 +3100,7 @@
       "fiat-argo-1-8-hgt-154-01.webp"
     ],
     "fipePreco": "R$ 64.576,00",
-    "fipeDescontoPct": -11.5,
+    "fipeDescontoPct": -13.8,
     "fipeConfianca": "alta"
   },
   {
@@ -3184,14 +3121,14 @@
       "hyundai-hb20-1-0-12v-evolution-155-01.webp"
     ],
     "fipePreco": "R$ 66.119,00",
-    "fipeDescontoPct": -5.9,
+    "fipeDescontoPct": -8.1,
     "fipeConfianca": "alta"
   },
   {
     "id": 156,
     "titulo": "Honda HR-V EXL 1.8 Flex",
     "marca": "Honda",
-    "preco": "77.990",
+    "preco": "79.490",
     "ano": "2016",
     "km": "129.000 km",
     "cambio": "CVT",
