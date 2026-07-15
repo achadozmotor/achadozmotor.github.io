@@ -249,14 +249,23 @@
       transform-style: preserve-3d; backface-visibility: hidden; text-decoration: none; display: block;
     }
     .bola3d-foto-pendulo {
-      width: 100%; height: 100%; transform-origin: 50% 50%; border-radius: 50%; overflow: hidden;
+      position: relative; width: 100%; height: 100%; transform-origin: 50% 50%; border-radius: 50%; overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
       background: #14141c; cursor: pointer; display: flex; align-items: center; justify-content: center;
       transition: box-shadow 0.3s, opacity 0.5s ease;
     }
     .bola3d-foto-pendulo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Sombreamento esférico: brilho no alto-esquerdo + sombra e borda escura embaixo/direita —
+       dá volume de bola pra cada foto não parecer uma moeda chapada (o "planeta") */
+    .bola3d-foto-pendulo::after {
+      content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: 2; pointer-events: none;
+      background:
+        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0) 40%),
+        radial-gradient(circle at 70% 78%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 62%);
+      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.55), inset 0 0 6px rgba(0, 0, 0, 0.4);
+    }
     .bola3d-foto .bola3d-tag {
-      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 3px 10px; background: rgba(10, 10, 15, 0.8);
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 3; white-space: nowrap; padding: 3px 10px; background: rgba(10, 10, 15, 0.8);
       backdrop-filter: blur(8px); border-radius: 100px; font-size: 0.65rem; font-weight: 700; color: #fab005;
       border: 1px solid rgba(250, 176, 5, 0.25);
     }
@@ -1381,9 +1390,15 @@
         cena.addEventListener('mouseleave', () => { fatorAlvo = 1; });
       }
 
-      // Plano orbital levemente inclinado (visto de cima): as fotos sobem por trás do sol
-      // e descem passando na frente dele — movimento de planeta de verdade, não só deslizar lateral
-      const ORBITA_INCLINACAO_RAD = 22 * Math.PI / 180;
+      // Plano orbital inclinado (visto de cima): as fotos sobem por trás do sol e descem
+      // passando na frente dele — movimento de planeta de verdade, não só deslizar lateral.
+      // A profundidade vira escala 3D via perspective(900px) do container (ver aplicarRotacao),
+      // então aqui NÃO multiplico scale() de novo — deixo a perspectiva fazer o volume sozinha.
+      const ORBITA_INCLINACAO_RAD = 26 * Math.PI / 180;
+      // Raio aparente do disco do sol na tela, no mesmo espaço de x/y — usado pra "eclipsar" a
+      // foto quando ela passa atrás do núcleo (é o que faltava pra parecer órbita, não anel chapado)
+      const raioSolTela = raioBase * 0.66;
+      const clamp01 = (v) => v < 0 ? 0 : v > 1 ? 1 : v;
 
       let ultimoTempo = performance.now();
       function animarOrbita(agora) {
@@ -1395,30 +1410,38 @@
         estadoOrbital.forEach(o => {
           o.angulo += o.velocidade * fatorVelocidade * dt;
           const rad = o.angulo * Math.PI / 180;
-          // Posição na órbita circular; a componente de profundidade também projeta o
-          // deslocamento vertical (é a inclinação do plano orbital que dá a elipse na tela)
+          // Posição na órbita circular; a inclinação do plano projeta o deslocamento vertical (elipse na tela)
           const x = Math.cos(rad) * o.raio;
           const zPlano = Math.sin(rad) * o.raio;
           const y = zPlano * Math.sin(ORBITA_INCLINACAO_RAD);
           const z = zPlano * Math.cos(ORBITA_INCLINACAO_RAD);
-          // Profundidade (1 = na frente do sol, -1 = atrás dele) pra apagar/encolher quando "eclipsada"
+          // Profundidade: +1 = na frente do sol (perto do observador), -1 = atrás dele
           const profundidade = Math.sin(rad);
-          const escala = 0.72 + 0.38 * ((profundidade + 1) / 2);
-          o.el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) scale(${escala.toFixed(3)})`;
+          o.el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px)`;
+          // Empilhamento correto: planeta da frente cobre o de trás
+          o.el.style.zIndex = String(1000 + Math.round(z));
           o.telaX = x; o.telaY = y; o.profundidade = profundidade;
-          o.el.style.opacity = (0.65 + 0.35 * ((profundidade + 1) / 2)).toFixed(2);
-          if (o.pendulo) {
-            // O balanço do pêndulo continua mesmo com a órbita mais devagar — como se a "gravidade" nunca parasse
-            const inclinacao = Math.sin(agora / 1000 * o.velBalanco + o.faseBalanco) * o.amplitudeBalanco;
-            o.pendulo.style.transform = `rotateZ(${inclinacao}deg)`;
 
+          // Eclipse: quando está atrás (profundidade<0) e cai dentro do disco do sol na tela,
+          // some gradualmente "por trás" do núcleo e reaparece do outro lado
+          const distCentro = Math.hypot(x, y);
+          let ocluido = 0;
+          if (profundidade < 0) {
+            const dentroDisco = clamp01(1 - distCentro / (raioSolTela + o.raio * 0.12));
+            ocluido = dentroDisco * clamp01(-profundidade * 2.2);
+          }
+          const opacidadeBase = 0.55 + 0.45 * ((profundidade + 1) / 2);
+          o.el.style.opacity = (opacidadeBase * (1 - 0.96 * ocluido)).toFixed(2);
+
+          if (o.pendulo) {
             // Luz do sol: quanto mais a foto passa na frente do núcleo, mais ela "pega sol" —
-            // brilha, satura e ganha um contorno quente; do lado de trás, fica mais fria e discreta
+            // brilha, satura e ganha contorno quente; atrás, fica mais fria, escura e desfocada (profundidade de campo)
             const luz = Math.max(0, profundidade) + (o.sobMouse ? 0.35 : 0);
-            const brilho = (1 + luz * 0.3).toFixed(2);
-            const saturacao = (1 + luz * 0.25).toFixed(2);
+            const brilho = (0.82 + luz * 0.42).toFixed(2);
+            const saturacao = (0.9 + luz * 0.35).toFixed(2);
             const sombra = Math.max(0, -profundidade);
-            o.pendulo.style.filter = `brightness(${brilho}) saturate(${saturacao})`;
+            const desfoque = (sombra * 1.6).toFixed(2);
+            o.pendulo.style.filter = `brightness(${brilho}) saturate(${saturacao}) blur(${desfoque}px)`;
             o.pendulo.style.boxShadow =
               `0 ${(18 + sombra * 6).toFixed(0)}px ${(40 + sombra * 10).toFixed(0)}px rgba(0,0,0,${(0.45 + sombra * 0.15).toFixed(2)}), ` +
               `0 0 ${(luz * 34).toFixed(0)}px rgba(255,${(176 + luz * 45).toFixed(0)},${(70 + luz * 70).toFixed(0)},${(luz * 0.55).toFixed(2)})`;
