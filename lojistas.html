@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJT1ZV794Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DJT1ZV794Q');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Lojistas — AchadozAuto | Parceria que só ganha quando você vende</title>
+  <meta name="description" content="A AchadozAuto não cobra mensalidade, pacote de anúncios nem destaque. A gente só ganha quando sua loja vende — e enquanto você fecha negócios, nós cuidamos de toda a divulgação digital da sua loja em Cuiabá." />
+  <meta property="og:title" content="Para Lojistas — AchadozAuto | Parceria que só ganha quando você vende" />
+  <meta property="og:description" content="Sem mensalidade, sem pacote de anúncios, sem destaque pago. Nossa remuneração acontece só quando a venda é concretizada. Você vende carros. Nós vendemos sua marca." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://achadozmotor.github.io/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://achadozmotor.github.io/lojistas.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://achadozmotor.github.io/lojistas.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== Base / tokens — herdados de index.html, sem alteração ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      color: #e8e8ed;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: rgba(250, 176, 5, 0.3); color: #fff; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0f; }
+    ::-webkit-scrollbar-thumb { background: #fab005; border-radius: 3px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #fab005; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: #fab005; }
+    .section-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .section-title .highlight {
+      background: linear-gradient(135deg, #fab005, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .section-desc { font-size: 1.125rem; line-height: 1.7; color: #8888a0; max-width: 620px; }
+
+    .noise {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 256px 256px;
+    }
+    .ambient-glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+    .ambient-glow--1 { width: 600px; height: 600px; background: rgba(250, 176, 5, 0.08); top: -200px; right: -200px; }
+    .ambient-glow--2 { width: 500px; height: 500px; background: rgba(255, 107, 53, 0.06); bottom: -150px; left: -150px; }
+    .ambient-glow--3 { width: 400px; height: 400px; background: rgba(120, 80, 255, 0.05); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ambient-glow--4 { width: 520px; height: 520px; background: rgba(255, 61, 53, 0.07); top: 10%; right: 8%; }
+
+    /* ===== Navbar — herdada de index.html ===== */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .navbar.scrolled { background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(20px) saturate(1.5); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 0; }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .navbar-logo .logo-icon {
+      width: 30px; height: 30px; object-fit: contain; display: block;
+      filter: drop-shadow(0 0 6px rgba(250, 176, 5, 0.25));
+      transition: filter 0.3s ease;
+    }
+    .navbar-logo:hover .logo-icon { filter: drop-shadow(0 0 10px rgba(250, 176, 5, 0.4)); }
+    .navbar-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .navbar-links a { font-size: 0.875rem; font-weight: 500; color: #8888a0; transition: color 0.3s; position: relative; }
+    .navbar-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #fab005;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .navbar-links a:hover { color: #e8e8ed; }
+    .navbar-links a:hover::after { width: 100%; }
+    .navbar-cta {
+      padding: 10px 24px; background: linear-gradient(135deg, #fab005, #ff6b35); color: #0a0a0f; border: none;
+      border-radius: 100px; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); font-family: 'Inter', sans-serif;
+    }
+    .navbar-cta:hover { transform: scale(1.05); box-shadow: 0 8px 32px rgba(250, 176, 5, 0.3); }
+    .navbar-mobile-btn { display: none; background: none; border: none; color: #e8e8ed; font-size: 1.5rem; cursor: pointer; padding: 4px; }
+
+    /* ===== Botões — herdados de index.html ===== */
+    .btn-primary {
+      padding: 14px 32px; background: linear-gradient(135deg, #fab005, #ff6b35); color: #0a0a0f; border: none;
+      border-radius: 100px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: 'Inter', sans-serif; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 40px rgba(250, 176, 5, 0.35); }
+    .btn-secondary {
+      padding: 14px 32px; background: transparent; color: #e8e8ed; border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 100px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: 'Inter', sans-serif; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: #fab005; background: rgba(250, 176, 5, 0.05); }
+
+    /* ===== Hero — mesma linguagem do index (grid, badge, gradiente, stats), sem o globo 3D ===== */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 60px; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(250, 176, 5, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(250, 176, 5, 0.035) 1px, transparent 1px);
+      background-size: 46px 46px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 0%, transparent 72%);
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 0%, transparent 72%);
+    }
+    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px 6px 6px; background: rgba(250, 176, 5, 0.1);
+      border: 1px solid rgba(250, 176, 5, 0.2); border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: #fab005; margin-bottom: 24px;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; background: #fab005; border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 24px; }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #fab005 0%, #ff6b35 50%, #ff3d7f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p.hero-sub { font-size: 1.125rem; line-height: 1.7; color: #8888a0; max-width: 520px; margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+    .hero-stat h3 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+    .hero-stat h3 .num-highlight {
+      background: linear-gradient(135deg, #fab005, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-stat p { font-size: 0.8rem; color: #666680; margin-top: 2px; max-width: 130px; }
+
+    /* Visual do hero: painel de parceria (mesma estética de card do index) */
+    .partner-panel {
+      position: relative; background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 28px; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+    .partner-panel::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(135deg, rgba(250, 176, 5, 0.06), transparent 60%);
+    }
+    .partner-head { position: relative; display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+    .partner-head .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px rgba(74,222,128,0.6); }
+    .partner-head span { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8888a0; }
+    .partner-row { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .partner-row:last-of-type { border-bottom: none; }
+    .partner-row .label { font-size: 0.92rem; color: #b0b0c4; }
+    .partner-row .val { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
+    .partner-row .val.zero { color: #4ade80; }
+    .partner-row .val.risco { color: #666680; text-decoration: line-through; font-weight: 600; font-size: 0.95rem; }
+    .partner-highlight {
+      position: relative; margin-top: 20px; padding: 18px 20px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(250,176,5,0.12), rgba(255,107,53,0.06));
+      border: 1px solid rgba(250, 176, 5, 0.28);
+    }
+    .partner-highlight .cap { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fab005; }
+    .partner-highlight .big { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 6px; }
+    .partner-highlight .big em { font-style: normal; background: linear-gradient(135deg, #fab005, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* ===== Frase de impacto (pull-quote) ===== */
+    .frase-band { padding: 80px 0; position: relative; }
+    .frase {
+      max-width: 900px; margin: 0 auto; text-align: center;
+      font-size: clamp(1.6rem, 3.6vw, 2.6rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em;
+    }
+    .frase em { font-style: normal; background: linear-gradient(135deg, #fab005, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .frase-sub { max-width: 620px; margin: 20px auto 0; text-align: center; color: #8888a0; font-size: 1.05rem; line-height: 1.7; }
+
+    /* ===== Blocos de seção genéricos ===== */
+    .bloco { padding: 110px 0; position: relative; }
+    .bloco--alt { background: rgba(255, 255, 255, 0.015); }
+    .bloco-head { max-width: 720px; }
+
+    /* ===== "Como funciona" — reusa how-card do index ===== */
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .how-card {
+      padding: 40px 32px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;
+    }
+    .how-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(250, 176, 5, 0.05), transparent); opacity: 0; transition: opacity 0.4s;
+    }
+    .how-card:hover { border-color: rgba(250, 176, 5, 0.2); transform: translateY(-4px); }
+    .how-card:hover::before { opacity: 1; }
+    .how-card-number { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 500; color: #fab005; letter-spacing: 0.1em; margin-bottom: 16px; }
+    .how-card-icon {
+      width: 48px; height: 48px; background: rgba(250, 176, 5, 0.1); border-radius: 14px; display: flex;
+      align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 20px;
+    }
+    .how-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .how-card p { font-size: 0.9rem; line-height: 1.6; color: #8888a0; }
+
+    /* ===== "Por que somos diferentes" — comparação ===== */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+    .compare-card { padding: 36px 32px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.06); background: rgba(255, 255, 255, 0.02); }
+    .compare-card--nos {
+      border-color: rgba(250, 176, 5, 0.3);
+      background: linear-gradient(160deg, rgba(250,176,5,0.10), rgba(255,107,53,0.05));
+      box-shadow: 0 20px 60px rgba(250, 176, 5, 0.10);
+    }
+    .compare-card .compare-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #666680; margin-bottom: 18px; display: inline-block;
+    }
+    .compare-card--nos .compare-tag { color: #fab005; }
+    .compare-card h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .compare-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; line-height: 1.5; color: #b0b0c4; }
+    .compare-list li .mk { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; margin-top: 1px; }
+    .compare-list li .mk.x { background: rgba(255, 61, 90, 0.12); color: #ff6b6b; }
+    .compare-list li .mk.v { background: rgba(250, 176, 5, 0.15); color: #fab005; }
+
+    /* ===== Modelo de remuneração ===== */
+    .model-wrap { margin-top: 56px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: stretch; }
+    .model-nots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
+    .model-not {
+      padding: 22px 20px; border-radius: 18px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06); text-align: center;
+    }
+    .model-not .zero { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.03em; color: #4ade80; line-height: 1; }
+    .model-not p { margin-top: 8px; font-size: 0.82rem; color: #8888a0; line-height: 1.4; }
+    .model-comissao {
+      padding: 36px 32px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center;
+      background: linear-gradient(160deg, rgba(250,176,5,0.12), rgba(255,107,53,0.06));
+      border: 1px solid rgba(250, 176, 5, 0.3);
+    }
+    .model-comissao .cap { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fab005; }
+    .model-comissao .num { font-size: 3.4rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin: 10px 0 4px; }
+    .model-comissao .num em { font-style: normal; background: linear-gradient(135deg, #fab005, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .model-comissao .num small { font-size: 1.1rem; font-weight: 700; color: #8888a0; }
+    .model-comissao p { font-size: 0.92rem; color: #b0b0c4; line-height: 1.6; margin-top: 10px; }
+
+    /* ===== Marketing / plataformas — chips ===== */
+    .plat-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; max-width: 900px; }
+    .plat-chip {
+      display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px; border-radius: 100px;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem; font-weight: 500; color: #e8e8ed; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .plat-chip:hover { border-color: rgba(250, 176, 5, 0.35); transform: translateY(-2px); }
+    .plat-chip .ico { font-size: 1.05rem; }
+    .plat-chip.soon { color: #8888a0; }
+    .plat-chip.soon .tagx { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: #666680; }
+
+    /* ===== Benefícios — reusa sellers-benefits/check do index ===== */
+    .sellers-benefits { list-style: none; margin-top: 48px; max-width: 720px; }
+    .sellers-benefits li {
+      display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 1rem; color: #8888a0;
+    }
+    .sellers-benefits li:last-child { border-bottom: none; }
+    .sellers-benefits li strong { color: #e8e8ed; }
+    .sellers-benefits li .check {
+      width: 22px; height: 22px; background: rgba(250, 176, 5, 0.15); border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; color: #fab005; font-size: 0.72rem; flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ===== FAQ — herdada de index.html ===== */
+    .faq { padding: 110px 0; }
+    .faq-lista { max-width: 760px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; }
+    .faq-item summary { cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: #fab005; font-size: 1.3rem; font-weight: 400; flex-shrink: 0; transition: transform 0.25s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { padding: 0 22px 18px; color: #b0b0c4; font-size: 0.95rem; line-height: 1.65; }
+    .faq-item p a { color: #fab005; }
+
+    /* ===== CTA final — herdada de index.html ===== */
+    .cta-section { padding: 120px 0; text-align: center; position: relative; }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(250, 176, 5, 0.05) 0%, transparent 70%); pointer-events: none;
+    }
+    .cta-box { max-width: 700px; margin: 0 auto; position: relative; }
+    .cta-box h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .cta-box p { font-size: 1.1rem; color: #8888a0; margin-bottom: 36px; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== Footer — herdada de index.html ===== */
+    .footer { padding: 60px 0 40px; border-top: 1px solid rgba(255, 255, 255, 0.04); position: relative; z-index: 2; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: 0.85rem; color: #666680; line-height: 1.6; margin-top: 12px; max-width: 300px; }
+    .footer-col h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #8888a0; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.85rem; color: #555570; transition: color 0.3s; }
+    .footer-col ul a:hover { color: #fab005; }
+    .footer-bottom {
+      padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.04); display: flex; justify-content: space-between;
+      align-items: center; font-size: 0.8rem; color: #444460;
+    }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a {
+      width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; display: flex;
+      align-items: center; justify-content: center; font-size: 0.9rem; transition: all 0.3s; color: #555570;
+    }
+    .footer-social a:hover { border-color: #fab005; color: #fab005; background: rgba(250, 176, 5, 0.05); }
+
+    /* ===== Reveal — herdada de index.html ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== Responsivo — mesma lógica de breakpoints do index ===== */
+    @media (max-width: 1024px) {
+      .hero .container { grid-template-columns: 1fr; gap: 44px; }
+      .hero-visual { order: -1; max-width: 460px; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .model-wrap { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .navbar-links { display: none; }
+      .navbar-mobile-btn { display: block; }
+      .navbar-links.open {
+        display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px); padding: 24px; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .how-grid { grid-template-columns: 1fr; }
+      .model-nots { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .cta-actions .btn-primary, .cta-actions .btn-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise"></div>
+  <div class="ambient-glow ambient-glow--1"></div>
+  <div class="ambient-glow ambient-glow--2"></div>
+  <div class="ambient-glow ambient-glow--3"></div>
+  <div class="ambient-glow ambient-glow--4"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/favicon-512.png" alt="AchadozAuto" class="logo-icon" />
+        AchadozAuto
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#diferencial">Por que somos diferentes</a></li>
+        <li><a href="#remuneracao">Remuneração</a></li>
+        <li><a href="index.html#ofertas">Ver o site</a></li>
+      </ul>
+      <a href="https://wa.me/5565999658968?text=Quero%20cadastrar%20minha%20loja%20na%20AchadozAuto" class="navbar-cta" target="_blank" rel="noopener noreferrer">Quero cadastrar minha loja</a>
+      <button class="navbar-mobile-btn" id="mobileBtn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Para lojistas de Cuiabá, MT
+        </div>
+        <h1>
+          Você vende carros.<br />
+          <span class="gradient-text">Nós vendemos sua marca.</span>
+        </h1>
+        <p class="hero-sub">
+          A AchadozAuto não é mais um portal de classificados. Somos um parceiro
+          comercial da sua loja — e só ganhamos quando você vende. Enquanto você
+          fecha negócios, a gente cuida de toda a divulgação digital do seu estoque.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5565999658968?text=Quero%20cadastrar%20minha%20loja%20na%20AchadozAuto" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            Quero cadastrar minha loja
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#diferencial" class="btn-secondary">Como funciona o modelo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><h3><span class="num-highlight">R$ 0</span></h3><p>pra anunciar seu estoque</p></div>
+          <div class="hero-stat"><h3><span class="num-highlight">~3%</span></h3><p>comissão só quando vende</p></div>
+          <div class="hero-stat"><h3><span class="num-highlight">∞</span></h3><p>veículos, sem limite</p></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="partner-panel">
+          <div class="partner-head">
+            <span class="dot"></span>
+            <span>Sua loja na AchadozAuto</span>
+          </div>
+          <div class="partner-row"><span class="label">Mensalidade</span><span class="val zero">R$ 0</span></div>
+          <div class="partner-row"><span class="label">Pacote de anúncios</span><span class="val zero">R$ 0</span></div>
+          <div class="partner-row"><span class="label">Destaque pago</span><span class="val zero">R$ 0</span></div>
+          <div class="partner-row"><span class="label">Limite de veículos</span><span class="val zero">Nenhum</span></div>
+          <div class="partner-highlight">
+            <div class="cap">Nossa remuneração</div>
+            <div class="big">Comissão <em>só quando a venda acontece</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FRASE DE IMPACTO ===== -->
+  <section class="frase-band">
+    <div class="container">
+      <p class="frase reveal">Enquanto você fecha negócios, <em>nós fazemos sua loja aparecer.</em></p>
+      <p class="frase-sub reveal reveal-delay-1">Seu estoque merece muito mais do que apenas um anúncio parado esperando alguém encontrar.</p>
+    </div>
+  </section>
+
+  <!-- ===== COMO FUNCIONA ===== -->
+  <section class="bloco" id="como-funciona">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Como funciona</div>
+        <h2 class="section-title reveal reveal-delay-1">Simples pra você, <span class="highlight">trabalhoso pra gente</span></h2>
+        <p class="section-desc reveal reveal-delay-2">Publicar um veículo tem que ser rápido. O trabalho pesado de fazer sua loja aparecer é nosso.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal reveal-delay-1">
+          <div class="how-card-number">01</div>
+          <div class="how-card-icon">🤝</div>
+          <h3>Você cadastra a loja</h3>
+          <p>Uma conversa no WhatsApp e seu estoque entra na AchadozAuto. Sem contrato de fidelidade, sem taxa de entrada, sem letra miúda.</p>
+        </div>
+        <div class="how-card reveal reveal-delay-2">
+          <div class="how-card-number">02</div>
+          <div class="how-card-icon">📡</div>
+          <h3>A gente divulga</h3>
+          <p>Seus veículos viram conteúdo no site e em cada rede social — feito sob medida pra cada plataforma, todo dia, sem você levantar um dedo.</p>
+        </div>
+        <div class="how-card reveal reveal-delay-3">
+          <div class="how-card-number">03</div>
+          <div class="how-card-icon">🚗</div>
+          <h3>Você vende</h3>
+          <p>Os leads chegam, você negocia direto com o comprador e fecha. A comissão só existe quando a venda se concretiza — nunca antes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POR QUE SOMOS DIFERENTES ===== -->
+  <section class="bloco bloco--alt" id="diferencial">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Por que somos diferentes</div>
+        <h2 class="section-title reveal reveal-delay-1">A gente inverteu <span class="highlight">a lógica do portal</span></h2>
+        <p class="section-desc reveal reveal-delay-2">Quase todo portal cobra pra você anunciar — mesmo que a loja não venda nenhum carro. A gente não quer ganhar porque um anúncio foi publicado. A gente quer ganhar porque ajudou a loja a vender.</p>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-card reveal reveal-delay-1">
+          <span class="compare-tag">Portais tradicionais</span>
+          <h3>Você paga pra aparecer</h3>
+          <ul class="compare-list">
+            <li><span class="mk x">✕</span><span>Mensalidade fixa, venda ou não venda</span></li>
+            <li><span class="mk x">✕</span><span>Pacote de anúncios e limite de veículos</span></li>
+            <li><span class="mk x">✕</span><span>Destaque e anúncio premium cobrados à parte</span></li>
+            <li><span class="mk x">✕</span><span>Ganham igual, independente do seu resultado</span></li>
+          </ul>
+        </div>
+        <div class="compare-card compare-card--nos reveal reveal-delay-2">
+          <span class="compare-tag">AchadozAuto</span>
+          <h3>A gente ganha junto com você</h3>
+          <ul class="compare-list">
+            <li><span class="mk v">✓</span><span>Zero mensalidade e zero taxa pra anunciar</span></li>
+            <li><span class="mk v">✓</span><span>Estoque inteiro, sem limite de veículos</span></li>
+            <li><span class="mk v">✓</span><span>Divulgação e destaque já inclusos, sem custo</span></li>
+            <li><span class="mk v">✓</span><span>Só ganhamos quando a venda acontece</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODELO DE REMUNERAÇÃO ===== -->
+  <section class="bloco" id="remuneracao">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Modelo de remuneração</div>
+        <h2 class="section-title reveal reveal-delay-1">A gente só ganha <span class="highlight">quando você vende</span></h2>
+        <p class="section-desc reveal reveal-delay-2">Nosso interesse é exatamente o mesmo da sua loja: vender mais. Quanto mais você vende, mais a AchadozAuto cresce. Simples assim.</p>
+      </div>
+      <div class="model-wrap">
+        <div class="model-nots reveal reveal-delay-1">
+          <div class="model-not"><div class="zero">R$ 0</div><p>de mensalidade</p></div>
+          <div class="model-not"><div class="zero">R$ 0</div><p>pra anunciar</p></div>
+          <div class="model-not"><div class="zero">R$ 0</div><p>por quantidade de veículos</p></div>
+          <div class="model-not"><div class="zero">R$ 0</div><p>por destaque</p></div>
+        </div>
+        <div class="model-comissao reveal reveal-delay-2">
+          <div class="cap">Comissão por venda</div>
+          <div class="num"><em>~3%</em> <small>negociável</small></div>
+          <p>O mercado normalmente trabalha com comissão próxima de 3%, e ela pode ser ajustada conforme o perfil da parceria. Você só paga quando o carro sai do pátio — e a gente ajudou a vender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FRASE DE IMPACTO 2 ===== -->
+  <section class="frase-band">
+    <div class="container">
+      <p class="frase reveal">Nosso sucesso <em>depende do seu sucesso.</em></p>
+      <p class="frase-sub reveal reveal-delay-1">Quando uma loja vende mais, a AchadozAuto cresce junto. Quando não vende, a gente também não chega onde quer. Por isso a gente rema pro mesmo lado.</p>
+    </div>
+  </section>
+
+  <!-- ===== MARKETING AUTOMATIZADO ===== -->
+  <section class="bloco bloco--alt" id="marketing">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Marketing digital</div>
+        <h2 class="section-title reveal reveal-delay-1">Uma máquina de divulgação <span class="highlight">pra cada rede</span></h2>
+        <p class="section-desc reveal reveal-delay-2">A gente não copia o mesmo anúncio pra tudo. Cada rede tem um comportamento, um algoritmo e um público diferente — então usamos inteligência artificial pra gerar conteúdo específico pra cada canal. Queremos assumir a responsabilidade pela divulgação digital da sua loja.</p>
+      </div>
+      <div class="plat-grid reveal reveal-delay-1">
+        <span class="plat-chip"><span class="ico">📸</span> Instagram</span>
+        <span class="plat-chip"><span class="ico">📘</span> Facebook</span>
+        <span class="plat-chip"><span class="ico">🛒</span> FB Marketplace</span>
+        <span class="plat-chip"><span class="ico">🎵</span> TikTok</span>
+        <span class="plat-chip"><span class="ico">▶️</span> YouTube Shorts</span>
+        <span class="plat-chip"><span class="ico">🔎</span> Google &amp; SEO</span>
+        <span class="plat-chip"><span class="ico">📍</span> Google Meu Negócio</span>
+        <span class="plat-chip"><span class="ico">🧵</span> Threads</span>
+        <span class="plat-chip soon"><span class="ico">📌</span> Pinterest <span class="tagx">em breve</span></span>
+        <span class="plat-chip soon"><span class="ico">✨</span> Novas plataformas <span class="tagx">conforme surgem</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECNOLOGIA ===== -->
+  <section class="bloco" id="tecnologia">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Tecnologia</div>
+        <h2 class="section-title reveal reveal-delay-1">Publicar um veículo tem que ser <span class="highlight">fácil</span></h2>
+        <p class="section-desc reveal reveal-delay-2">Você não deveria perder tempo preenchendo dezenas de campos. A gente cria ferramentas inteligentes que automatizam o trabalho manual — porque a tecnologia existe pra fazer sua loja vender mais, não pra te dar mais trabalho.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal reveal-delay-1">
+          <div class="how-card-number">01</div>
+          <div class="how-card-icon">⚡</div>
+          <h3>Cadastro sem burocracia</h3>
+          <p>Cole o anúncio ou mande as fotos — a gente estrutura os dados do veículo automaticamente pra você.</p>
+        </div>
+        <div class="how-card reveal reveal-delay-2">
+          <div class="how-card-number">02</div>
+          <div class="how-card-icon">📊</div>
+          <h3>Comparativo com a FIPE</h3>
+          <p>Cada preço é comparado com a tabela FIPE. Quando o negócio é bom, o comprador vê na hora — e confia mais.</p>
+        </div>
+        <div class="how-card reveal reveal-delay-3">
+          <div class="how-card-number">03</div>
+          <div class="how-card-icon">🤖</div>
+          <h3>Conteúdo gerado por IA</h3>
+          <p>Enquanto você atende a loja, a IA monta posts, vídeos e textos adaptados pra cada rede, todo dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFÍCIOS PRO LOJISTA ===== -->
+  <section class="bloco bloco--alt" id="beneficios">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Benefícios pra sua loja</div>
+        <h2 class="section-title reveal reveal-delay-1">O que você ganha <span class="highlight">nessa parceria</span></h2>
+      </div>
+      <ul class="sellers-benefits">
+        <li class="reveal reveal-delay-1"><span class="check">✓</span><span><strong>Divulgação sem custo inicial</strong> — seu estoque aparece no site e nas redes sem você pagar nada pra anunciar.</span></li>
+        <li class="reveal reveal-delay-1"><span class="check">✓</span><span><strong>Marketing multiplataforma automatizado</strong> — Instagram, TikTok, YouTube, Google e mais, com conteúdo feito sob medida pra cada rede.</span></li>
+        <li class="reveal reveal-delay-2"><span class="check">✓</span><span><strong>Leads qualificados da sua região</strong> — compradores reais de Cuiabá e região, procurando exatamente o que você vende.</span></li>
+        <li class="reveal reveal-delay-2"><span class="check">✓</span><span><strong>Investimento contínuo</strong> — enquanto você vende, a gente investe em servidores, SEO, campanhas patrocinadas, IA e novas funcionalidades.</span></li>
+        <li class="reveal reveal-delay-3"><span class="check">✓</span><span><strong>Interesses alinhados de verdade</strong> — a gente só ganha quando você vende, então trabalhamos pra isso acontecer.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="bloco-head">
+        <div class="section-label reveal">Perguntas frequentes</div>
+        <h2 class="section-title reveal reveal-delay-1">Dúvidas de <span class="highlight">quem vende carro</span></h2>
+      </div>
+      <div class="faq-lista">
+        <details class="faq-item">
+          <summary>Quanto custa pra colocar minha loja na AchadozAuto?</summary>
+          <p>Nada pra anunciar. Não cobramos mensalidade, pacote de anúncios, destaque nem taxa por quantidade de veículos. Nossa remuneração é só uma comissão sobre a venda concretizada — normalmente próxima de 3%, negociável conforme a parceria.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu não vender nenhum carro no mês?</summary>
+          <p>Você não paga nada. É esse o ponto: a gente só ganha quando você vende. Se a venda não acontece, não existe cobrança — o risco da divulgação é nosso, não seu.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Tem limite de veículos que posso anunciar?</summary>
+          <p>Não. Pode cadastrar o estoque inteiro, sem limite e sem custo por quantidade. Quanto mais carro no radar, mais chance de venda pra você.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona a comissão?</summary>
+          <p>A comissão só incide quando a venda é concretizada. O mercado costuma trabalhar perto de 3%, e o valor pode ser ajustado conforme o perfil da parceria. Sem venda, sem comissão.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês são uma loja concorrente?</summary>
+          <p>Não. A AchadozAuto não vende carros próprios — a gente conecta as melhores lojas de Cuiabá aos compradores certos. A negociação é sempre direta entre você e o comprador; nosso papel é fazer sua loja aparecer e gerar o lead.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso preencher um cadastro gigante de cada carro?</summary>
+          <p>Não. A gente automatiza o máximo possível: você cola o anúncio ou manda as fotos e a plataforma estrutura os dados. A tecnologia existe pra te poupar trabalho, não pra criar mais.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como faço pra começar?</summary>
+          <p>É uma conversa no <a href="https://wa.me/5565999658968?text=Quero%20cadastrar%20minha%20loja%20na%20AchadozAuto" target="_blank" rel="noopener noreferrer">WhatsApp</a>. A gente entende o perfil da sua loja, alinha a parceria e coloca seu estoque no ar.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Não queremos ser o maior portal.<br /><span class="highlight">Queremos ser o que mais vende.</span></h2>
+        <p>Se você quer um parceiro que cresce junto com a sua loja — e que só ganha quando você ganha — a gente precisa conversar.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5565999658968?text=Quero%20cadastrar%20minha%20loja%20na%20AchadozAuto" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            Quero cadastrar minha loja
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="index.html#ofertas" class="btn-secondary">Ver o site por dentro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo"><img src="assets/favicon-512.png" alt="Logo" class="logo-icon" />AchadozAuto</a>
+          <p>As melhores ofertas de carros e motos seminovos em Cuiabá-MT. Curadoria real feita por quem entende do mercado local.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegue</h4>
+          <ul>
+            <li><a href="index.html#ofertas">Ofertas</a></li>
+            <li><a href="index.html#como-funciona">Como funciona</a></li>
+            <li><a href="carros/">Todos os carros e motos</a></li>
+            <li><a href="index.html#faq">Perguntas frequentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Lojistas</h4>
+          <ul>
+            <li><a href="lojistas.html#top">Cadastrar loja</a></li>
+            <li><a href="lojistas.html#remuneracao">Remuneração</a></li>
+            <li><a href="lojistas.html#faq">Perguntas frequentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://instagram.com/achadoz.auto" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://wa.me/5565999658968?text=Quero%20cadastrar%20minha%20loja%20na%20AchadozAuto" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AchadozAuto. Feito em Cuiabá-MT.</span>
+        <div class="footer-social">
+          <a href="https://instagram.com/achadoz.auto" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+          <a href="https://wa.me/5565999658968?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20AchadozAuto" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="https://wa.me/5565999658968?text=Quero%20saber%20mais%20sobre%20o%20TikTok%20da%20AchadozAuto" aria-label="TikTok" target="_blank" rel="noopener noreferrer">🎵</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== NAVBAR SCROLL ===== (herdado de index.html)
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // ===== MOBILE MENU ===== (herdado de index.html)
+    const mobileBtn = document.getElementById('mobileBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      mobileBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        mobileBtn.textContent = '☰';
+      });
+    });
+
+    // ===== REVEAL ON SCROLL ===== (herdado de index.html)
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
