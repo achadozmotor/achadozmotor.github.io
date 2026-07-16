@@ -944,7 +944,7 @@
     "fipePreco": "R$ 74.801,00",
     "fipeDescontoPct": 8.4,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 41,
@@ -2088,7 +2088,7 @@
     "fipePreco": "R$ 112.010,00",
     "fipeDescontoPct": 6.7,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 87,
@@ -2452,7 +2452,7 @@
     "fipePreco": "R$ 95.283,00",
     "fipeDescontoPct": 13.5,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 101,
@@ -2712,7 +2712,7 @@
     "fipePreco": "R$ 52.030,00",
     "fipeDescontoPct": 8.7,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 112,
@@ -3076,7 +3076,7 @@
     "fipePreco": "R$ 51.206,00",
     "fipeDescontoPct": 9.2,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 126,
@@ -3258,7 +3258,7 @@
     "fipePreco": "R$ 95.283,00",
     "fipeDescontoPct": 9.2,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 133,
@@ -3570,7 +3570,7 @@
     "fipePreco": "R$ 76.410,00",
     "fipeDescontoPct": 6.4,
     "fipeConfianca": "alta",
-    "oportunidadeAchadoz": false
+    "oportunidadeAchadoz": true
   },
   {
     "id": 145,
