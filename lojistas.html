@@ -26,9 +26,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Fontes sem bloquear a renderização: preload + swap do media no onload (noscript cobre JS desligado) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     /* ===== Base / tokens — herdados de index.html, sem alteração ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -328,6 +332,10 @@
     @media (max-width: 768px) {
       .navbar-links { display: none; }
       .navbar-mobile-btn { display: block; }
+      /* Sem isso o texto "AchadoZ.auto" transborda por baixo do CTA em telas estreitas */
+      .navbar .container { gap: 10px; }
+      .navbar-logo { font-size: 1.1rem; white-space: nowrap; }
+      .navbar-cta { padding: 8px 14px; font-size: 0.8rem; white-space: nowrap; flex-shrink: 0; }
       .navbar-links.open {
         display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
         background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px); padding: 24px; gap: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -665,7 +673,7 @@
           <h4>Navegue</h4>
           <ul>
             <li><a href="index.html#ofertas">Ofertas</a></li>
-            <li><a href="index.html#como-funciona">Como funciona</a></li>
+            <li><a href="como-funciona.html">Quem somos / Como funciona</a></li>
             <li><a href="carros/">Todos os carros e motos</a></li>
             <li><a href="index.html#faq">Perguntas frequentes</a></li>
           </ul>

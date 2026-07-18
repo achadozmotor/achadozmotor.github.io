@@ -1,0 +1,23 @@
+{
+  "name": "AchadoZ.auto — Ofertas de carros e motos em Cuiabá",
+  "short_name": "AchadoZ.auto",
+  "description": "Curadoria diária de ofertas de carros e motos seminovos em Cuiabá-MT, com comparativo contra a tabela FIPE.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "assets/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
